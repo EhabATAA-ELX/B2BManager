@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="VB" Debug="true" Service="Logger" CodeBehind="~/App_Code/Logger.vb" %>

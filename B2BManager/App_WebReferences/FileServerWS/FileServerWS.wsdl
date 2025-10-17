@@ -1,0 +1,1652 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.Electrolux.com/FilesManagement" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.Electrolux.com/FilesManagement" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.Electrolux.com/FilesManagement">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="GetFileContent">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SopName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFileContentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFileContentResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserContextAuthentication" type="tns:UserContextAuthentication" />
+      <s:complexType name="UserContextAuthentication">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="SessionID" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountryID" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="LanguageID" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ApplicationID" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ProjectID" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="CompanyID" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsV18Compliant" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="DisplayPrice" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Environment" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="MoveFilesToSecureFolder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="currentFolderID" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="newFolderID" type="tns:FolderEntity" />
+            <s:element minOccurs="0" maxOccurs="1" name="documents" type="tns:ArrayOfDocumentEntity" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="FolderEntity">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:BaseEntity">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="ID" type="s1:guid" />
+              <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="ParentFolderID" type="s1:guid" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsDeleted" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsDefault" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="Rank" type="s:int" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="BaseEntity" />
+      <s:complexType name="UserEntity">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:BaseEntity">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="ID" type="s1:guid" />
+              <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="CompanyID" type="s1:guid" />
+              <s:element minOccurs="1" maxOccurs="1" name="TypeUser" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="DateExpiration" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="isadmin" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PassWord" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="eMail" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="WUId" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="Edencheck" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="MaxLines" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="MaxLineQty" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="DelayDeleteSB" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="DeFaultCurrency" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="HomePage" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SalesAcademyTemplate" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MainUrl" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SysID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="GWSGroup" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="GWSGroupID" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="LanguageID" type="s1:guid" />
+              <s:element minOccurs="1" maxOccurs="1" name="MarketPlace" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="DefaultMenu" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="CategoryID" type="s1:guid" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsSelected" type="s:boolean" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="LanguageEntity">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:BaseEntity">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="ID" type="s1:guid" />
+              <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="IsoCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PictureFlag" type="s:base64Binary" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="FileTypeEntity">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:BaseEntity">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="ID" type="s1:guid" />
+              <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Extension" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="DocumentEntity">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:BaseEntity">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="ID" type="s1:guid" />
+              <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Content" type="s:base64Binary" />
+              <s:element minOccurs="1" maxOccurs="1" name="ParentFolderID" type="s1:guid" />
+              <s:element minOccurs="0" maxOccurs="1" name="Type" type="tns:FileTypeEntity" />
+              <s:element minOccurs="1" maxOccurs="1" name="StartDate" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="CreationDate" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="ThumbnailID" type="s1:guid" />
+              <s:element minOccurs="0" maxOccurs="1" name="ThumbnailName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ThumbnailContent" type="s:base64Binary" />
+              <s:element minOccurs="1" maxOccurs="1" name="UseDateRangeForPublishing" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="CompaniesCount" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="EndDate" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="Size" type="s:long" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsPublished" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsDeleted" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="FileLanguage" type="tns:LanguageEntity" />
+              <s:element minOccurs="1" maxOccurs="1" name="SendNotification" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="Owner" type="tns:UserEntity" />
+              <s:element minOccurs="1" maxOccurs="1" name="Rank" type="s:int" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfDocumentEntity">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DocumentEntity" nillable="true" type="tns:DocumentEntity" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="MoveFilesToSecureFolderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MoveFilesToSecureFolderResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDocumentsList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="folderID" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDocumentsListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDocumentsListResult" type="tns:ArrayOfDocumentEntity" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNewDocuments">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="folderID" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="documentNames" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetNewDocumentsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetNewDocumentsResult" type="tns:ArrayOfDocumentEntity" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="document" type="tns:DocumentEntity" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UploadFileResult" type="tns:DocumentEntity" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateFolder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="folderEntity" type="tns:FolderEntity" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateFolderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateFolderResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="documentEntity" type="tns:DocumentEntity" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateFileResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteDocuments">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="documentList" type="tns:ArrayOfGuid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfGuid">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="guid" type="s1:guid" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="DeleteDocumentsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteDocumentsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateFolder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="folder" type="tns:FolderEntity" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateFolderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateFolderResult" type="tns:FolderEntity" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteFolder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="folderId" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteFolderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteFolderResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditFolderName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="folder" type="tns:FolderEntity" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditFolderNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EditFolderNameResult" type="tns:FolderEntity" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSecuredFoldersStructure">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetSecuredFoldersStructureResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSecuredFoldersStructureResult" type="tns:ArrayOfFolderEntity" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfFolderEntity">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="FolderEntity" nillable="true" type="tns:FolderEntity" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetUnsecuredFoldersStructure">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetUnsecuredFoldersStructureResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUnsecuredFoldersStructureResult" type="tns:ArrayOfFolderEntity" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetDocumentSecurity">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="documentID" type="tns:ArrayOfGuid" />
+            <s:element minOccurs="0" maxOccurs="1" name="companyList" type="tns:ArrayOfCompanyEntity" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCompanyEntity">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CompanyEntity" nillable="true" type="tns:CompanyEntity" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CompanyEntity">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:BaseEntity">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="ID" type="s1:guid" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsActive" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="DocumentCount" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="CustomerCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CustomerSoldToID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="CountryID" type="s1:guid" />
+              <s:element minOccurs="1" maxOccurs="1" name="AsChild" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsAlreadyPopulated" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="UserList" type="tns:ArrayOfUserEntity" />
+              <s:element minOccurs="1" maxOccurs="1" name="MaxLineQty" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="MinLineQty" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="MaxLines" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsBookable" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="IpSecurity" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasAccess" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="ImgCustomer" />
+              <s:element minOccurs="1" maxOccurs="1" name="HardSwitch" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="Edencheck" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="MinSBQty" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="MaxModification" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="News" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Links" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Stats" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Agreements" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Help" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="HomePage" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SalesAcademyTemplate" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DefaultMenu" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="IPFilteringList" type="tns:ArrayOfString" />
+              <s:element minOccurs="1" maxOccurs="1" name="CUSRANGE_TIMESTAMP_REQUEST" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="CUSRANGE_TIMESTAMP_REPLY" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsPartialOrder" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasCMIR" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsBrokenPromiseActive" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsPriceDiscountActive" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsPriceScalesActive" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="UsersNbr" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsExpectedPrice" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="TimeStampSAPImport" nillable="true" type="s:dateTime" />
+              <s:element minOccurs="0" maxOccurs="1" name="CH_CUID_5" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CH_NAME_5" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CH_CUID_4" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CH_NAME_4" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CH_CUID_3" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CH_NAME_3" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PLC" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PLC_Description" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="C_GRP4" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfUserEntity">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="UserEntity" nillable="true" type="tns:UserEntity" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SetDocumentSecurityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SetDocumentSecurityResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCompanyUsersFilters">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="companyID" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCompanyUsersFiltersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCompanyUsersFiltersResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCountryCompanyFilters">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetCountryCompanyFiltersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCountryCompanyFiltersResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCompanyUsers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="companyID" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="filter" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCompanyUsersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCompanyUsersResult" type="tns:ArrayOfUserEntity" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDocumentUsers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="companyID" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="documentID" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDocumentUsersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDocumentUsersResult" type="tns:ArrayOfUserEntity" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDocumentSecurity">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="documentID" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDocumentSecurityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDocumentSecurityResult" type="tns:ArrayOfCompanyEntity" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCountryCompanyList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="filter" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCountryCompanyListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCountryCompanyListResult" type="tns:ArrayOfCompanyEntity" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCountryCompanyListSearch">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCountryCompanyListSearchResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCountryCompanyListSearchResult" type="tns:ArrayOfCompanyEntity" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDocument">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="documentID" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDocumentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDocumentResult" type="tns:DocumentEntity" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetAssignement">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="isAssignement" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="documentIDs" type="tns:ArrayOfGuid" />
+            <s:element minOccurs="0" maxOccurs="1" name="companyIds" type="tns:ArrayOfGuid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetAssignementResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UploadThumbnail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="thumbnail" type="tns:ThumbnailEntity" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ThumbnailEntity">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:BaseEntity">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="ID" type="s1:guid" />
+              <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Content" type="s:base64Binary" />
+              <s:element minOccurs="1" maxOccurs="1" name="Size" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="CreationDate" type="s:dateTime" />
+              <s:element minOccurs="0" maxOccurs="1" name="Extension" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="CreatedBy" type="s1:guid" />
+              <s:element minOccurs="1" maxOccurs="1" name="DocumentID" type="s1:guid" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="UploadThumbnailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UploadThumbnailResult" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetThumbnailByID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="thumbnailID" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetThumbnailByIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetThumbnailByIDResult" type="tns:ThumbnailEntity" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateDocumentPublicationParameters">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="documentIDs" type="tns:ArrayOfGuid" />
+            <s:element minOccurs="1" maxOccurs="1" name="thumbnailID" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="UseDateRangeForPublishing" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="PublishFrom" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="PublishTo" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="sendNotification" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateDocumentPublicationParametersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateDocumentPublicationParametersResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RowDropped">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DocumentIdsSource" type="tns:ArrayOfGuid" />
+            <s:element minOccurs="1" maxOccurs="1" name="DocumentIdTarget" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="IsBefore" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RowDroppedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RowDroppedResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DocumentsRanking">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DocumentIds" type="tns:ArrayOfGuid" />
+            <s:element minOccurs="1" maxOccurs="1" name="RankCursor" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DocumentsRankingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DocumentsRankingResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FolderRanking">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FolderId" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="RankCursor" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FolderRankingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FolderRankingResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="guid">
+        <s:restriction base="s:string">
+          <s:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetFileContentSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFileContent" />
+  </wsdl:message>
+  <wsdl:message name="GetFileContentSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFileContentResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFileContentUserContextAuthentication">
+    <wsdl:part name="UserContextAuthentication" element="tns:UserContextAuthentication" />
+  </wsdl:message>
+  <wsdl:message name="MoveFilesToSecureFolderSoapIn">
+    <wsdl:part name="parameters" element="tns:MoveFilesToSecureFolder" />
+  </wsdl:message>
+  <wsdl:message name="MoveFilesToSecureFolderSoapOut">
+    <wsdl:part name="parameters" element="tns:MoveFilesToSecureFolderResponse" />
+  </wsdl:message>
+  <wsdl:message name="MoveFilesToSecureFolderUserContextAuthentication">
+    <wsdl:part name="UserContextAuthentication" element="tns:UserContextAuthentication" />
+  </wsdl:message>
+  <wsdl:message name="GetDocumentsListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDocumentsList" />
+  </wsdl:message>
+  <wsdl:message name="GetDocumentsListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDocumentsListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDocumentsListUserContextAuthentication">
+    <wsdl:part name="UserContextAuthentication" element="tns:UserContextAuthentication" />
+  </wsdl:message>
+  <wsdl:message name="GetNewDocumentsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetNewDocuments" />
+  </wsdl:message>
+  <wsdl:message name="GetNewDocumentsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetNewDocumentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetNewDocumentsUserContextAuthentication">
+    <wsdl:part name="UserContextAuthentication" element="tns:UserContextAuthentication" />
+  </wsdl:message>
+  <wsdl:message name="UploadFileSoapIn">
+    <wsdl:part name="parameters" element="tns:UploadFile" />
+  </wsdl:message>
+  <wsdl:message name="UploadFileSoapOut">
+    <wsdl:part name="parameters" element="tns:UploadFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="UploadFileUserContextAuthentication">
+    <wsdl:part name="UserContextAuthentication" element="tns:UserContextAuthentication" />
+  </wsdl:message>
+  <wsdl:message name="UpdateFolderSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateFolder" />
+  </wsdl:message>
+  <wsdl:message name="UpdateFolderSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateFolderResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateFolderUserContextAuthentication">
+    <wsdl:part name="UserContextAuthentication" element="tns:UserContextAuthentication" />
+  </wsdl:message>
+  <wsdl:message name="UpdateFileSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateFile" />
+  </wsdl:message>
+  <wsdl:message name="UpdateFileSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateFileUserContextAuthentication">
+    <wsdl:part name="UserContextAuthentication" element="tns:UserContextAuthentication" />
+  </wsdl:message>
+  <wsdl:message name="DeleteDocumentsSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteDocuments" />
+  </wsdl:message>
+  <wsdl:message name="DeleteDocumentsSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteDocumentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteDocumentsUserContextAuthentication">
+    <wsdl:part name="UserContextAuthentication" element="tns:UserContextAuthentication" />
+  </wsdl:message>
+  <wsdl:message name="CreateFolderSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateFolder" />
+  </wsdl:message>
+  <wsdl:message name="CreateFolderSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateFolderResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateFolderUserContextAuthentication">
+    <wsdl:part name="UserContextAuthentication" element="tns:UserContextAuthentication" />
+  </wsdl:message>
+  <wsdl:message name="DeleteFolderSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteFolder" />
+  </wsdl:message>
+  <wsdl:message name="DeleteFolderSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteFolderResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteFolderUserContextAuthentication">
+    <wsdl:part name="UserContextAuthentication" element="tns:UserContextAuthentication" />
+  </wsdl:message>
+  <wsdl:message name="EditFolderNameSoapIn">
+    <wsdl:part name="parameters" element="tns:EditFolderName" />
+  </wsdl:message>
+  <wsdl:message name="EditFolderNameSoapOut">
+    <wsdl:part name="parameters" element="tns:EditFolderNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="EditFolderNameUserContextAuthentication">
+    <wsdl:part name="UserContextAuthentication" element="tns:UserContextAuthentication" />
+  </wsdl:message>
+  <wsdl:message name="GetSecuredFoldersStructureSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSecuredFoldersStructure" />
+  </wsdl:message>
+  <wsdl:message name="GetSecuredFoldersStructureSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSecuredFoldersStructureResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSecuredFoldersStructureUserContextAuthentication">
+    <wsdl:part name="UserContextAuthentication" element="tns:UserContextAuthentication" />
+  </wsdl:message>
+  <wsdl:message name="GetUnsecuredFoldersStructureSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUnsecuredFoldersStructure" />
+  </wsdl:message>
+  <wsdl:message name="GetUnsecuredFoldersStructureSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUnsecuredFoldersStructureResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUnsecuredFoldersStructureUserContextAuthentication">
+    <wsdl:part name="UserContextAuthentication" element="tns:UserContextAuthentication" />
+  </wsdl:message>
+  <wsdl:message name="SetDocumentSecuritySoapIn">
+    <wsdl:part name="parameters" element="tns:SetDocumentSecurity" />
+  </wsdl:message>
+  <wsdl:message name="SetDocumentSecuritySoapOut">
+    <wsdl:part name="parameters" element="tns:SetDocumentSecurityResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetDocumentSecurityUserContextAuthentication">
+    <wsdl:part name="UserContextAuthentication" element="tns:UserContextAuthentication" />
+  </wsdl:message>
+  <wsdl:message name="GetCompanyUsersFiltersSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCompanyUsersFilters" />
+  </wsdl:message>
+  <wsdl:message name="GetCompanyUsersFiltersSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCompanyUsersFiltersResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCompanyUsersFiltersUserContextAuthentication">
+    <wsdl:part name="UserContextAuthentication" element="tns:UserContextAuthentication" />
+  </wsdl:message>
+  <wsdl:message name="GetCountryCompanyFiltersSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCountryCompanyFilters" />
+  </wsdl:message>
+  <wsdl:message name="GetCountryCompanyFiltersSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCountryCompanyFiltersResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCountryCompanyFiltersUserContextAuthentication">
+    <wsdl:part name="UserContextAuthentication" element="tns:UserContextAuthentication" />
+  </wsdl:message>
+  <wsdl:message name="GetCompanyUsersSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCompanyUsers" />
+  </wsdl:message>
+  <wsdl:message name="GetCompanyUsersSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCompanyUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCompanyUsersUserContextAuthentication">
+    <wsdl:part name="UserContextAuthentication" element="tns:UserContextAuthentication" />
+  </wsdl:message>
+  <wsdl:message name="GetDocumentUsersSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDocumentUsers" />
+  </wsdl:message>
+  <wsdl:message name="GetDocumentUsersSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDocumentUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDocumentUsersUserContextAuthentication">
+    <wsdl:part name="UserContextAuthentication" element="tns:UserContextAuthentication" />
+  </wsdl:message>
+  <wsdl:message name="GetDocumentSecuritySoapIn">
+    <wsdl:part name="parameters" element="tns:GetDocumentSecurity" />
+  </wsdl:message>
+  <wsdl:message name="GetDocumentSecuritySoapOut">
+    <wsdl:part name="parameters" element="tns:GetDocumentSecurityResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDocumentSecurityUserContextAuthentication">
+    <wsdl:part name="UserContextAuthentication" element="tns:UserContextAuthentication" />
+  </wsdl:message>
+  <wsdl:message name="GetCountryCompanyListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCountryCompanyList" />
+  </wsdl:message>
+  <wsdl:message name="GetCountryCompanyListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCountryCompanyListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCountryCompanyListUserContextAuthentication">
+    <wsdl:part name="UserContextAuthentication" element="tns:UserContextAuthentication" />
+  </wsdl:message>
+  <wsdl:message name="GetCountryCompanyListSearchSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCountryCompanyListSearch" />
+  </wsdl:message>
+  <wsdl:message name="GetCountryCompanyListSearchSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCountryCompanyListSearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCountryCompanyListSearchUserContextAuthentication">
+    <wsdl:part name="UserContextAuthentication" element="tns:UserContextAuthentication" />
+  </wsdl:message>
+  <wsdl:message name="GetDocumentSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDocument" />
+  </wsdl:message>
+  <wsdl:message name="GetDocumentSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDocumentUserContextAuthentication">
+    <wsdl:part name="UserContextAuthentication" element="tns:UserContextAuthentication" />
+  </wsdl:message>
+  <wsdl:message name="SetAssignementSoapIn">
+    <wsdl:part name="parameters" element="tns:SetAssignement" />
+  </wsdl:message>
+  <wsdl:message name="SetAssignementSoapOut">
+    <wsdl:part name="parameters" element="tns:SetAssignementResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetAssignementUserContextAuthentication">
+    <wsdl:part name="UserContextAuthentication" element="tns:UserContextAuthentication" />
+  </wsdl:message>
+  <wsdl:message name="UploadThumbnailSoapIn">
+    <wsdl:part name="parameters" element="tns:UploadThumbnail" />
+  </wsdl:message>
+  <wsdl:message name="UploadThumbnailSoapOut">
+    <wsdl:part name="parameters" element="tns:UploadThumbnailResponse" />
+  </wsdl:message>
+  <wsdl:message name="UploadThumbnailUserContextAuthentication">
+    <wsdl:part name="UserContextAuthentication" element="tns:UserContextAuthentication" />
+  </wsdl:message>
+  <wsdl:message name="GetThumbnailByIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetThumbnailByID" />
+  </wsdl:message>
+  <wsdl:message name="GetThumbnailByIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetThumbnailByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetThumbnailByIDUserContextAuthentication">
+    <wsdl:part name="UserContextAuthentication" element="tns:UserContextAuthentication" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDocumentPublicationParametersSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateDocumentPublicationParameters" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDocumentPublicationParametersSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateDocumentPublicationParametersResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDocumentPublicationParametersUserContextAuthentication">
+    <wsdl:part name="UserContextAuthentication" element="tns:UserContextAuthentication" />
+  </wsdl:message>
+  <wsdl:message name="RowDroppedSoapIn">
+    <wsdl:part name="parameters" element="tns:RowDropped" />
+  </wsdl:message>
+  <wsdl:message name="RowDroppedSoapOut">
+    <wsdl:part name="parameters" element="tns:RowDroppedResponse" />
+  </wsdl:message>
+  <wsdl:message name="RowDroppedUserContextAuthentication">
+    <wsdl:part name="UserContextAuthentication" element="tns:UserContextAuthentication" />
+  </wsdl:message>
+  <wsdl:message name="DocumentsRankingSoapIn">
+    <wsdl:part name="parameters" element="tns:DocumentsRanking" />
+  </wsdl:message>
+  <wsdl:message name="DocumentsRankingSoapOut">
+    <wsdl:part name="parameters" element="tns:DocumentsRankingResponse" />
+  </wsdl:message>
+  <wsdl:message name="DocumentsRankingUserContextAuthentication">
+    <wsdl:part name="UserContextAuthentication" element="tns:UserContextAuthentication" />
+  </wsdl:message>
+  <wsdl:message name="FolderRankingSoapIn">
+    <wsdl:part name="parameters" element="tns:FolderRanking" />
+  </wsdl:message>
+  <wsdl:message name="FolderRankingSoapOut">
+    <wsdl:part name="parameters" element="tns:FolderRankingResponse" />
+  </wsdl:message>
+  <wsdl:message name="FolderRankingUserContextAuthentication">
+    <wsdl:part name="UserContextAuthentication" element="tns:UserContextAuthentication" />
+  </wsdl:message>
+  <wsdl:portType name="FileServerWSSoap">
+    <wsdl:operation name="GetFileContent">
+      <wsdl:input message="tns:GetFileContentSoapIn" />
+      <wsdl:output message="tns:GetFileContentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MoveFilesToSecureFolder">
+      <wsdl:input message="tns:MoveFilesToSecureFolderSoapIn" />
+      <wsdl:output message="tns:MoveFilesToSecureFolderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentsList">
+      <wsdl:input message="tns:GetDocumentsListSoapIn" />
+      <wsdl:output message="tns:GetDocumentsListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNewDocuments">
+      <wsdl:input message="tns:GetNewDocumentsSoapIn" />
+      <wsdl:output message="tns:GetNewDocumentsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadFile">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Upload a single file to web server.</wsdl:documentation>
+      <wsdl:input message="tns:UploadFileSoapIn" />
+      <wsdl:output message="tns:UploadFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFolder">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Reactivate a Folder and its contained documents in the CSM.</wsdl:documentation>
+      <wsdl:input message="tns:UpdateFolderSoapIn" />
+      <wsdl:output message="tns:UpdateFolderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFile">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update a File in the CSM.</wsdl:documentation>
+      <wsdl:input message="tns:UpdateFileSoapIn" />
+      <wsdl:output message="tns:UpdateFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDocuments">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Delete files. They have to be in the same folder. Return docIds concerned by sendnotification with their unassigned companies. </wsdl:documentation>
+      <wsdl:input message="tns:DeleteDocumentsSoapIn" />
+      <wsdl:output message="tns:DeleteDocumentsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateFolder">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add a folder to the cms structure.</wsdl:documentation>
+      <wsdl:input message="tns:CreateFolderSoapIn" />
+      <wsdl:output message="tns:CreateFolderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFolder">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Delete a folder in the cms structure. Return docIds concerned by sendnotification with their unassigned companies. </wsdl:documentation>
+      <wsdl:input message="tns:DeleteFolderSoapIn" />
+      <wsdl:output message="tns:DeleteFolderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditFolderName">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rename a folder in the cms structure. If double, correct the name</wsdl:documentation>
+      <wsdl:input message="tns:EditFolderNameSoapIn" />
+      <wsdl:output message="tns:EditFolderNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSecuredFoldersStructure">
+      <wsdl:input message="tns:GetSecuredFoldersStructureSoapIn" />
+      <wsdl:output message="tns:GetSecuredFoldersStructureSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUnsecuredFoldersStructure">
+      <wsdl:input message="tns:GetUnsecuredFoldersStructureSoapIn" />
+      <wsdl:output message="tns:GetUnsecuredFoldersStructureSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetDocumentSecurity">
+      <wsdl:input message="tns:SetDocumentSecuritySoapIn" />
+      <wsdl:output message="tns:SetDocumentSecuritySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanyUsersFilters">
+      <wsdl:input message="tns:GetCompanyUsersFiltersSoapIn" />
+      <wsdl:output message="tns:GetCompanyUsersFiltersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCountryCompanyFilters">
+      <wsdl:input message="tns:GetCountryCompanyFiltersSoapIn" />
+      <wsdl:output message="tns:GetCountryCompanyFiltersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanyUsers">
+      <wsdl:input message="tns:GetCompanyUsersSoapIn" />
+      <wsdl:output message="tns:GetCompanyUsersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentUsers">
+      <wsdl:input message="tns:GetDocumentUsersSoapIn" />
+      <wsdl:output message="tns:GetDocumentUsersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentSecurity">
+      <wsdl:input message="tns:GetDocumentSecuritySoapIn" />
+      <wsdl:output message="tns:GetDocumentSecuritySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCountryCompanyList">
+      <wsdl:input message="tns:GetCountryCompanyListSoapIn" />
+      <wsdl:output message="tns:GetCountryCompanyListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCountryCompanyListSearch">
+      <wsdl:input message="tns:GetCountryCompanyListSearchSoapIn" />
+      <wsdl:output message="tns:GetCountryCompanyListSearchSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocument">
+      <wsdl:input message="tns:GetDocumentSoapIn" />
+      <wsdl:output message="tns:GetDocumentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetAssignement">
+      <wsdl:input message="tns:SetAssignementSoapIn" />
+      <wsdl:output message="tns:SetAssignementSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadThumbnail">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Upload a single Thumbnail to DB</wsdl:documentation>
+      <wsdl:input message="tns:UploadThumbnailSoapIn" />
+      <wsdl:output message="tns:UploadThumbnailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetThumbnailByID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get the thumbnail entity by its ID</wsdl:documentation>
+      <wsdl:input message="tns:GetThumbnailByIDSoapIn" />
+      <wsdl:output message="tns:GetThumbnailByIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDocumentPublicationParameters">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update the documents publication parameters</wsdl:documentation>
+      <wsdl:input message="tns:UpdateDocumentPublicationParametersSoapIn" />
+      <wsdl:output message="tns:UpdateDocumentPublicationParametersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RowDropped">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Move the rank of the documentSources following the documentTarget</wsdl:documentation>
+      <wsdl:input message="tns:RowDroppedSoapIn" />
+      <wsdl:output message="tns:RowDroppedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DocumentsRanking">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Move the rank of the documents following the cursor</wsdl:documentation>
+      <wsdl:input message="tns:DocumentsRankingSoapIn" />
+      <wsdl:output message="tns:DocumentsRankingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FolderRanking">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Move the rank of the folder following the cursor</wsdl:documentation>
+      <wsdl:input message="tns:FolderRankingSoapIn" />
+      <wsdl:output message="tns:FolderRankingSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="FileServerWSSoap" type="tns:FileServerWSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetFileContent">
+      <soap:operation soapAction="http://www.Electrolux.com/FilesManagement/GetFileContent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetFileContentUserContextAuthentication" part="UserContextAuthentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MoveFilesToSecureFolder">
+      <soap:operation soapAction="http://www.Electrolux.com/FilesManagement/MoveFilesToSecureFolder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:MoveFilesToSecureFolderUserContextAuthentication" part="UserContextAuthentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentsList">
+      <soap:operation soapAction="http://www.Electrolux.com/FilesManagement/GetDocumentsList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetDocumentsListUserContextAuthentication" part="UserContextAuthentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewDocuments">
+      <soap:operation soapAction="http://www.Electrolux.com/FilesManagement/GetNewDocuments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetNewDocumentsUserContextAuthentication" part="UserContextAuthentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadFile">
+      <soap:operation soapAction="http://www.Electrolux.com/FilesManagement/UploadFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UploadFileUserContextAuthentication" part="UserContextAuthentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFolder">
+      <soap:operation soapAction="http://www.Electrolux.com/FilesManagement/UpdateFolder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateFolderUserContextAuthentication" part="UserContextAuthentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFile">
+      <soap:operation soapAction="http://www.Electrolux.com/FilesManagement/UpdateFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateFileUserContextAuthentication" part="UserContextAuthentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDocuments">
+      <soap:operation soapAction="http://www.Electrolux.com/FilesManagement/DeleteDocuments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:DeleteDocumentsUserContextAuthentication" part="UserContextAuthentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateFolder">
+      <soap:operation soapAction="http://www.Electrolux.com/FilesManagement/CreateFolder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CreateFolderUserContextAuthentication" part="UserContextAuthentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFolder">
+      <soap:operation soapAction="http://www.Electrolux.com/FilesManagement/DeleteFolder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:DeleteFolderUserContextAuthentication" part="UserContextAuthentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditFolderName">
+      <soap:operation soapAction="http://www.Electrolux.com/FilesManagement/EditFolderName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:EditFolderNameUserContextAuthentication" part="UserContextAuthentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSecuredFoldersStructure">
+      <soap:operation soapAction="http://www.Electrolux.com/FilesManagement/GetSecuredFoldersStructure" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetSecuredFoldersStructureUserContextAuthentication" part="UserContextAuthentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUnsecuredFoldersStructure">
+      <soap:operation soapAction="http://www.Electrolux.com/FilesManagement/GetUnsecuredFoldersStructure" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetUnsecuredFoldersStructureUserContextAuthentication" part="UserContextAuthentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetDocumentSecurity">
+      <soap:operation soapAction="http://www.Electrolux.com/FilesManagement/SetDocumentSecurity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SetDocumentSecurityUserContextAuthentication" part="UserContextAuthentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanyUsersFilters">
+      <soap:operation soapAction="http://www.Electrolux.com/FilesManagement/GetCompanyUsersFilters" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetCompanyUsersFiltersUserContextAuthentication" part="UserContextAuthentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCountryCompanyFilters">
+      <soap:operation soapAction="http://www.Electrolux.com/FilesManagement/GetCountryCompanyFilters" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetCountryCompanyFiltersUserContextAuthentication" part="UserContextAuthentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanyUsers">
+      <soap:operation soapAction="http://www.Electrolux.com/FilesManagement/GetCompanyUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetCompanyUsersUserContextAuthentication" part="UserContextAuthentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentUsers">
+      <soap:operation soapAction="http://www.Electrolux.com/FilesManagement/GetDocumentUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetDocumentUsersUserContextAuthentication" part="UserContextAuthentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentSecurity">
+      <soap:operation soapAction="http://www.Electrolux.com/FilesManagement/GetDocumentSecurity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetDocumentSecurityUserContextAuthentication" part="UserContextAuthentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCountryCompanyList">
+      <soap:operation soapAction="http://www.Electrolux.com/FilesManagement/GetCountryCompanyList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetCountryCompanyListUserContextAuthentication" part="UserContextAuthentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCountryCompanyListSearch">
+      <soap:operation soapAction="http://www.Electrolux.com/FilesManagement/GetCountryCompanyListSearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetCountryCompanyListSearchUserContextAuthentication" part="UserContextAuthentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocument">
+      <soap:operation soapAction="http://www.Electrolux.com/FilesManagement/GetDocument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetDocumentUserContextAuthentication" part="UserContextAuthentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetAssignement">
+      <soap:operation soapAction="http://www.Electrolux.com/FilesManagement/SetAssignement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SetAssignementUserContextAuthentication" part="UserContextAuthentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadThumbnail">
+      <soap:operation soapAction="http://www.Electrolux.com/FilesManagement/UploadThumbnail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UploadThumbnailUserContextAuthentication" part="UserContextAuthentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetThumbnailByID">
+      <soap:operation soapAction="http://www.Electrolux.com/FilesManagement/GetThumbnailByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetThumbnailByIDUserContextAuthentication" part="UserContextAuthentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDocumentPublicationParameters">
+      <soap:operation soapAction="http://www.Electrolux.com/FilesManagement/UpdateDocumentPublicationParameters" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateDocumentPublicationParametersUserContextAuthentication" part="UserContextAuthentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RowDropped">
+      <soap:operation soapAction="http://www.Electrolux.com/FilesManagement/RowDropped" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RowDroppedUserContextAuthentication" part="UserContextAuthentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DocumentsRanking">
+      <soap:operation soapAction="http://www.Electrolux.com/FilesManagement/DocumentsRanking" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:DocumentsRankingUserContextAuthentication" part="UserContextAuthentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FolderRanking">
+      <soap:operation soapAction="http://www.Electrolux.com/FilesManagement/FolderRanking" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:FolderRankingUserContextAuthentication" part="UserContextAuthentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="FileServerWSSoap12" type="tns:FileServerWSSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetFileContent">
+      <soap12:operation soapAction="http://www.Electrolux.com/FilesManagement/GetFileContent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetFileContentUserContextAuthentication" part="UserContextAuthentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MoveFilesToSecureFolder">
+      <soap12:operation soapAction="http://www.Electrolux.com/FilesManagement/MoveFilesToSecureFolder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:MoveFilesToSecureFolderUserContextAuthentication" part="UserContextAuthentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentsList">
+      <soap12:operation soapAction="http://www.Electrolux.com/FilesManagement/GetDocumentsList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetDocumentsListUserContextAuthentication" part="UserContextAuthentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewDocuments">
+      <soap12:operation soapAction="http://www.Electrolux.com/FilesManagement/GetNewDocuments" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetNewDocumentsUserContextAuthentication" part="UserContextAuthentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadFile">
+      <soap12:operation soapAction="http://www.Electrolux.com/FilesManagement/UploadFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UploadFileUserContextAuthentication" part="UserContextAuthentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFolder">
+      <soap12:operation soapAction="http://www.Electrolux.com/FilesManagement/UpdateFolder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UpdateFolderUserContextAuthentication" part="UserContextAuthentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFile">
+      <soap12:operation soapAction="http://www.Electrolux.com/FilesManagement/UpdateFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UpdateFileUserContextAuthentication" part="UserContextAuthentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDocuments">
+      <soap12:operation soapAction="http://www.Electrolux.com/FilesManagement/DeleteDocuments" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:DeleteDocumentsUserContextAuthentication" part="UserContextAuthentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateFolder">
+      <soap12:operation soapAction="http://www.Electrolux.com/FilesManagement/CreateFolder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CreateFolderUserContextAuthentication" part="UserContextAuthentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFolder">
+      <soap12:operation soapAction="http://www.Electrolux.com/FilesManagement/DeleteFolder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:DeleteFolderUserContextAuthentication" part="UserContextAuthentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditFolderName">
+      <soap12:operation soapAction="http://www.Electrolux.com/FilesManagement/EditFolderName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:EditFolderNameUserContextAuthentication" part="UserContextAuthentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSecuredFoldersStructure">
+      <soap12:operation soapAction="http://www.Electrolux.com/FilesManagement/GetSecuredFoldersStructure" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetSecuredFoldersStructureUserContextAuthentication" part="UserContextAuthentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUnsecuredFoldersStructure">
+      <soap12:operation soapAction="http://www.Electrolux.com/FilesManagement/GetUnsecuredFoldersStructure" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetUnsecuredFoldersStructureUserContextAuthentication" part="UserContextAuthentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetDocumentSecurity">
+      <soap12:operation soapAction="http://www.Electrolux.com/FilesManagement/SetDocumentSecurity" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SetDocumentSecurityUserContextAuthentication" part="UserContextAuthentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanyUsersFilters">
+      <soap12:operation soapAction="http://www.Electrolux.com/FilesManagement/GetCompanyUsersFilters" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetCompanyUsersFiltersUserContextAuthentication" part="UserContextAuthentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCountryCompanyFilters">
+      <soap12:operation soapAction="http://www.Electrolux.com/FilesManagement/GetCountryCompanyFilters" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetCountryCompanyFiltersUserContextAuthentication" part="UserContextAuthentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanyUsers">
+      <soap12:operation soapAction="http://www.Electrolux.com/FilesManagement/GetCompanyUsers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetCompanyUsersUserContextAuthentication" part="UserContextAuthentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentUsers">
+      <soap12:operation soapAction="http://www.Electrolux.com/FilesManagement/GetDocumentUsers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetDocumentUsersUserContextAuthentication" part="UserContextAuthentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentSecurity">
+      <soap12:operation soapAction="http://www.Electrolux.com/FilesManagement/GetDocumentSecurity" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetDocumentSecurityUserContextAuthentication" part="UserContextAuthentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCountryCompanyList">
+      <soap12:operation soapAction="http://www.Electrolux.com/FilesManagement/GetCountryCompanyList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetCountryCompanyListUserContextAuthentication" part="UserContextAuthentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCountryCompanyListSearch">
+      <soap12:operation soapAction="http://www.Electrolux.com/FilesManagement/GetCountryCompanyListSearch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetCountryCompanyListSearchUserContextAuthentication" part="UserContextAuthentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocument">
+      <soap12:operation soapAction="http://www.Electrolux.com/FilesManagement/GetDocument" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetDocumentUserContextAuthentication" part="UserContextAuthentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetAssignement">
+      <soap12:operation soapAction="http://www.Electrolux.com/FilesManagement/SetAssignement" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SetAssignementUserContextAuthentication" part="UserContextAuthentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadThumbnail">
+      <soap12:operation soapAction="http://www.Electrolux.com/FilesManagement/UploadThumbnail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UploadThumbnailUserContextAuthentication" part="UserContextAuthentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetThumbnailByID">
+      <soap12:operation soapAction="http://www.Electrolux.com/FilesManagement/GetThumbnailByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetThumbnailByIDUserContextAuthentication" part="UserContextAuthentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDocumentPublicationParameters">
+      <soap12:operation soapAction="http://www.Electrolux.com/FilesManagement/UpdateDocumentPublicationParameters" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UpdateDocumentPublicationParametersUserContextAuthentication" part="UserContextAuthentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RowDropped">
+      <soap12:operation soapAction="http://www.Electrolux.com/FilesManagement/RowDropped" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:RowDroppedUserContextAuthentication" part="UserContextAuthentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DocumentsRanking">
+      <soap12:operation soapAction="http://www.Electrolux.com/FilesManagement/DocumentsRanking" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:DocumentsRankingUserContextAuthentication" part="UserContextAuthentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FolderRanking">
+      <soap12:operation soapAction="http://www.Electrolux.com/FilesManagement/FolderRanking" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:FolderRankingUserContextAuthentication" part="UserContextAuthentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FileServerWS">
+    <wsdl:port name="FileServerWSSoap" binding="tns:FileServerWSSoap">
+      <soap:address location="http://euws1349.biz.electrolux.com:9122/FileServerWS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="FileServerWSSoap12" binding="tns:FileServerWSSoap12">
+      <soap12:address location="http://euws1349.biz.electrolux.com:9122/FileServerWS.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

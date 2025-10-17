@@ -1,0 +1,2 @@
+﻿<%@ Control Language="VB" AutoEventWireup="false" CodeFile="InsightsHorizontalBarChart.ascx.vb" Inherits="UserControls_InsightsHorizontalBarChart" %>
+<div class="grid-stack-item-content" style="width: 98%; height: 700px;"  id="Chart_<%= ChartUID %>"></div>

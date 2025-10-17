@@ -1,0 +1,151 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.34031.81
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAPRequesterLib", "SAPRequestsLib\SAPRequesterLib.csproj", "{0B18ED0F-2B9F-4A0C-8214-A3950D63F40E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonitoringConsoleApp", "MonitoringConsoleApp\MonitoringConsoleApp.csproj", "{CE3E66B9-7EE3-4A39-919D-7674D0FC80BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "B2BMessagesMonitoringService", "B2BMessagesMonitoringService\B2BMessagesMonitoringService.csproj", "{AB473A67-5457-489C-BE29-61A5925E1370}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "B2BManager", "B2BManager", "{BAF07759-3287-4D73-B601-5A701E5E0E17}"
+	ProjectSection(WebsiteProperties) = preProject
+		SccProjectName = "SAK"
+		SccAuxPath = "SAK"
+		SccLocalPath = "SAK"
+		SccProvider = "SAK"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.6.1"
+		ProjectReferences = "{0b18ed0f-2b9f-4a0c-8214-a3950d63f40e}|SAPRequestsLib.dll;{58b6e00f-ef88-4933-957f-c400fbde7e01}|ApiClient.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_57323"
+		Debug.AspNetCompiler.PhysicalPath = "B2BManager\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_57323\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_57323"
+		Release.AspNetCompiler.PhysicalPath = "B2BManager\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_57323\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "57323"
+		SlnRelativePath = "B2BManager\"
+		DefaultWebSiteLanguage = "Visual Basic"
+	EndProjectSection
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "InsightsDataService", "InsightsDataService\InsightsDataService.vbproj", "{9FD58004-63D8-46AC-81F4-868D15971CA3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutomatedTestsLib", "AutomatedTestsLib\AutomatedTestsLib.csproj", "{F79B0BF6-6456-4470-96BD-5FDEB8272820}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "AutomatedTestsService", "AutomatedTestsService", "{A150BB44-BC97-4755-99FB-16904E52A940}"
+	ProjectSection(WebsiteProperties) = preProject
+		SccProjectName = "SAK"
+		SccAuxPath = "SAK"
+		SccLocalPath = "SAK"
+		SccProvider = "SAK"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.6.1"
+		ProjectReferences = "{f79b0bf6-6456-4470-96bd-5fdeb8272820}|AutomatedTestsLib.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_64204"
+		Debug.AspNetCompiler.PhysicalPath = "AutomatedTestsService\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_64204\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_64204"
+		Release.AspNetCompiler.PhysicalPath = "AutomatedTestsService\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_64204\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "64204"
+		SlnRelativePath = "AutomatedTestsService\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiClient", "ApiClient\ApiClient.csproj", "{58B6E00F-EF88-4933-957F-C400FBDE7E01}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0B18ED0F-2B9F-4A0C-8214-A3950D63F40E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B18ED0F-2B9F-4A0C-8214-A3950D63F40E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B18ED0F-2B9F-4A0C-8214-A3950D63F40E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B18ED0F-2B9F-4A0C-8214-A3950D63F40E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE3E66B9-7EE3-4A39-919D-7674D0FC80BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE3E66B9-7EE3-4A39-919D-7674D0FC80BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE3E66B9-7EE3-4A39-919D-7674D0FC80BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE3E66B9-7EE3-4A39-919D-7674D0FC80BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB473A67-5457-489C-BE29-61A5925E1370}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB473A67-5457-489C-BE29-61A5925E1370}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB473A67-5457-489C-BE29-61A5925E1370}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB473A67-5457-489C-BE29-61A5925E1370}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAF07759-3287-4D73-B601-5A701E5E0E17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAF07759-3287-4D73-B601-5A701E5E0E17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAF07759-3287-4D73-B601-5A701E5E0E17}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAF07759-3287-4D73-B601-5A701E5E0E17}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{9FD58004-63D8-46AC-81F4-868D15971CA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FD58004-63D8-46AC-81F4-868D15971CA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FD58004-63D8-46AC-81F4-868D15971CA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FD58004-63D8-46AC-81F4-868D15971CA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F79B0BF6-6456-4470-96BD-5FDEB8272820}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F79B0BF6-6456-4470-96BD-5FDEB8272820}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F79B0BF6-6456-4470-96BD-5FDEB8272820}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F79B0BF6-6456-4470-96BD-5FDEB8272820}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A150BB44-BC97-4755-99FB-16904E52A940}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A150BB44-BC97-4755-99FB-16904E52A940}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A150BB44-BC97-4755-99FB-16904E52A940}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{A150BB44-BC97-4755-99FB-16904E52A940}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{58B6E00F-EF88-4933-957F-C400FBDE7E01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58B6E00F-EF88-4933-957F-C400FBDE7E01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58B6E00F-EF88-4933-957F-C400FBDE7E01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58B6E00F-EF88-4933-957F-C400FBDE7E01}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {01021DE3-539C-42A5-91AA-33B68738997C}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 9
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://euws1350:8080/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = AutomatedTestsLib\\AutomatedTestsLib.csproj
+		SccProjectName1 = AutomatedTestsLib
+		SccLocalPath1 = AutomatedTestsLib
+		SccWebProject2 = true
+		SccProjectUniqueName2 = AutomatedTestsService
+		SccProjectName2 = AutomatedTestsService
+		SccLocalPath2 = AutomatedTestsService
+		SccProjectEnlistmentChoice2 = 2
+		SccWebProject3 = true
+		SccProjectUniqueName3 = B2BManager
+		SccProjectName3 = B2BManager
+		SccLocalPath3 = B2BManager
+		SccProjectEnlistmentChoice3 = 2
+		SccProjectUniqueName4 = B2BMessagesMonitoringService\\B2BMessagesMonitoringService.csproj
+		SccProjectName4 = B2BMessagesMonitoringService
+		SccLocalPath4 = B2BMessagesMonitoringService
+		SccProjectUniqueName5 = InsightsDataService\\InsightsDataService.vbproj
+		SccProjectName5 = InsightsDataService
+		SccLocalPath5 = InsightsDataService
+		SccProjectUniqueName6 = MonitoringConsoleApp\\MonitoringConsoleApp.csproj
+		SccProjectName6 = MonitoringConsoleApp
+		SccLocalPath6 = MonitoringConsoleApp
+		SccProjectUniqueName7 = SAPRequestsLib\\SAPRequesterLib.csproj
+		SccProjectName7 = SAPRequestsLib
+		SccLocalPath7 = SAPRequestsLib
+		SccProjectUniqueName8 = ApiClient\\ApiClient.csproj
+		SccProjectName8 = ApiClient
+		SccLocalPath8 = ApiClient
+	EndGlobalSection
+EndGlobal

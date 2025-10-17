@@ -1,0 +1,45 @@
+﻿.dataTables_processing {
+    height: 60px !important;
+    margin-top: -15px !important;
+}
+
+.dataTables_filter {
+    text-align: left;
+    font-family: Electrolux_light;
+    font-weight: bold;
+    color: #041d4f;
+    float: left !important;
+    margin-left: 5px;
+    margin-bottom: 10px;
+}
+
+    .dataTables_filter input {
+        float: right;
+        width: 180px;
+    }
+
+.CountriesTree img {
+    width: 20px !important;
+    height: 16px !important;
+}
+
+.ToolsAndActions img {
+    width: 20px !important;
+    height: 20px !important;
+}
+
+
+table.dataTable.display tbody tr.odd > img {
+    background-color: transparent !important;
+}
+
+.list-group-item .filterImg {
+    display: none;
+    visibility: hidden;
+}
+
+.selected-row .filterImg {
+    display: inline-block !important;
+    visibility: visible !important;
+    margin-bottom: -5px !important;
+}

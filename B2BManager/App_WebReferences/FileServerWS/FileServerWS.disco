@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://euws1349.biz.electrolux.com:9122/FileServerWS.asmx?wsdl" docRef="http://euws1349.biz.electrolux.com:9122/FileServerWS.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://euws1349.biz.electrolux.com:9122/FileServerWS.asmx" xmlns:q1="http://www.Electrolux.com/FilesManagement" binding="q1:FileServerWSSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://euws1349.biz.electrolux.com:9122/FileServerWS.asmx" xmlns:q2="http://www.Electrolux.com/FilesManagement" binding="q2:FileServerWSSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

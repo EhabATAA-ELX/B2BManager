@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Log">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ApplicationName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Environment" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ActionName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="MachineName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="UserID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CountryID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="MachineDetails" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ActionDetails" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ElapsedTime" type="xs:int" />
+        <xs:element minOccurs="0" name="MSG_XML" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="HasError" type="xs:boolean" />
+        <xs:element minOccurs="0" name="ErrorMessage" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ErrorStackTrace" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LogResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

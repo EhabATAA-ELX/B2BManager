@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://euws1462.biz.electrolux.com:8080/UAT/WCFB2B/wcfB2B.svc?wsdl" docRef="http://euws1462.biz.electrolux.com:8080/UAT/WCFB2B/wcfB2B.svc" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+</discovery>

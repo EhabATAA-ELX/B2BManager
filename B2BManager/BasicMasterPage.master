@@ -1,0 +1,47 @@
+﻿<%@ Master Language="VB" CodeFile="BasicMasterPage.master.vb" Inherits="BasicMasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title runat="server" id="title">Electrolux B2B Manager</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link href="CSS/Toggle.css" rel="stylesheet" />
+    <link href="CSS/Global.css?v=3" rel="stylesheet" />
+    <link rel="stylesheet" href="Scripts/fontawesome-free/css/all.min.css" />
+    <link rel="stylesheet" href="Scripts/admin/css/adminlte.css" />
+    <script src="Scripts/jquery-3.2.1.js"></script>
+    <script src="Scripts/Global.js?v=3"></script>
+    <script src="Scripts/jquery/1.9.1/jquery.min.js"></script>
+    <script src="Scripts/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <link href="Scripts/magnific-popup/magnific-popup.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder runat="server" ID="HeaderPlaceHolder"></asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server" style="overflow:hidden" autocomplete="off">
+        <input autocomplete="false" name="hidden" type="text" style="display:none;" />
+        <asp:ScriptManager runat="server" ID="ScriptManager1"></asp:ScriptManager>
+        <asp:Panel runat="server" ID="headerPanel">
+                <a class="brand-link" style="background-color: #fff !important;">
+                    <asp:Table runat="server">
+                        <asp:TableRow>
+                            <asp:TableCell>
+                                <img src="Images/electrolux.png" alt="Electrolux" style="height: 38px;" />
+                            </asp:TableCell>
+                            <asp:TableCell>
+                                <span class="brand-text Electrolux_Color Electrolux_light_bold font14" style="margin-top:4px"><%= ClsHelper.GetInstanceName(True) %></span>
+                            </asp:TableCell>
+                        </asp:TableRow>
+                    </asp:Table>
+                </a>
+                <hr />
+        </asp:Panel>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </form>
+    <script src="Scripts/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="Scripts/admin/js/adminlte.min.js"></script>
+</body>
+</html>

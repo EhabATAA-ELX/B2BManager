@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c0c73a5d-b001-4b99-9c3a-c17f7e18f683" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://euws1463.biz.electrolux.com:70/WebLogger/Logger.svc?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Logger.wsdl" MetadataType="Wsdl" ID="395223a2-3003-413b-a171-0e5848a2ab41" SourceId="1" SourceUrl="http://euws1463.biz.electrolux.com:70/WebLogger/Logger.svc?wsdl" />
+    <MetadataFile FileName="Logger.xsd" MetadataType="Schema" ID="3443ca61-c417-4cba-a887-9c08e56844e7" SourceId="1" SourceUrl="http://euws1463.biz.electrolux.com:70/WebLogger/Logger.svc?xsd=xsd1" />
+    <MetadataFile FileName="Logger1.xsd" MetadataType="Schema" ID="68a6d8fe-056f-42a1-8f32-7d49efaf8fcf" SourceId="1" SourceUrl="http://euws1463.biz.electrolux.com:70/WebLogger/Logger.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

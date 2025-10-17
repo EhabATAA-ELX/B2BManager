@@ -1,0 +1,608 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="wcfB2B" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://euws1462.biz.electrolux.com:8080/UAT/WCFB2B/wcfB2B.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://euws1462.biz.electrolux.com:8080/UAT/WCFB2B/wcfB2B.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IwcfB2B_sendAddress_InputMessage">
+    <wsdl:part name="parameters" element="tns:sendAddress" />
+  </wsdl:message>
+  <wsdl:message name="IwcfB2B_sendAddress_OutputMessage">
+    <wsdl:part name="parameters" element="tns:sendAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwcfB2B_sendPrice_InputMessage">
+    <wsdl:part name="parameters" element="tns:sendPrice" />
+  </wsdl:message>
+  <wsdl:message name="IwcfB2B_sendPrice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:sendPriceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwcfB2B_sendAvailability_InputMessage">
+    <wsdl:part name="parameters" element="tns:sendAvailability" />
+  </wsdl:message>
+  <wsdl:message name="IwcfB2B_sendAvailability_OutputMessage">
+    <wsdl:part name="parameters" element="tns:sendAvailabilityResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwcfB2B_sendOrderPlacement_InputMessage">
+    <wsdl:part name="parameters" element="tns:sendOrderPlacement" />
+  </wsdl:message>
+  <wsdl:message name="IwcfB2B_sendOrderPlacement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:sendOrderPlacementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwcfB2B_sendOrderPlacementNew_InputMessage">
+    <wsdl:part name="parameters" element="tns:sendOrderPlacementNew" />
+  </wsdl:message>
+  <wsdl:message name="IwcfB2B_sendOrderPlacementNew_OutputMessage">
+    <wsdl:part name="parameters" element="tns:sendOrderPlacementNewResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwcfB2B_sendOrderStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:sendOrderStatus" />
+  </wsdl:message>
+  <wsdl:message name="IwcfB2B_sendOrderStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:sendOrderStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwcfB2B_sendOrderStatusTest_InputMessage">
+    <wsdl:part name="parameters" element="tns:sendOrderStatusTest" />
+  </wsdl:message>
+  <wsdl:message name="IwcfB2B_sendOrderStatusTest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:sendOrderStatusTestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwcfB2B_sendCustomerRange_InputMessage">
+    <wsdl:part name="parameters" element="tns:sendCustomerRange" />
+  </wsdl:message>
+  <wsdl:message name="IwcfB2B_sendCustomerRange_OutputMessage">
+    <wsdl:part name="parameters" element="tns:sendCustomerRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwcfB2B_sendConsumerAddress_InputMessage">
+    <wsdl:part name="parameters" element="tns:sendConsumerAddress" />
+  </wsdl:message>
+  <wsdl:message name="IwcfB2B_sendConsumerAddress_OutputMessage">
+    <wsdl:part name="parameters" element="tns:sendConsumerAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwcfB2B_sendCountryRange_InputMessage">
+    <wsdl:part name="parameters" element="tns:sendCountryRange" />
+  </wsdl:message>
+  <wsdl:message name="IwcfB2B_sendCountryRange_OutputMessage">
+    <wsdl:part name="parameters" element="tns:sendCountryRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwcfB2B_PutMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:PutMessage" />
+  </wsdl:message>
+  <wsdl:message name="IwcfB2B_PutMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PutMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwcfB2B_sendSaveVMIParameters_InputMessage">
+    <wsdl:part name="parameters" element="tns:sendSaveVMIParameters" />
+  </wsdl:message>
+  <wsdl:message name="IwcfB2B_sendSaveVMIParameters_OutputMessage">
+    <wsdl:part name="parameters" element="tns:sendSaveVMIParametersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwcfB2B_sendGetVMIParameters_InputMessage">
+    <wsdl:part name="parameters" element="tns:sendGetVMIParameters" />
+  </wsdl:message>
+  <wsdl:message name="IwcfB2B_sendGetVMIParameters_OutputMessage">
+    <wsdl:part name="parameters" element="tns:sendGetVMIParametersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwcfB2B_sendSaveCMIR_InputMessage">
+    <wsdl:part name="parameters" element="tns:sendSaveCMIR" />
+  </wsdl:message>
+  <wsdl:message name="IwcfB2B_sendSaveCMIR_OutputMessage">
+    <wsdl:part name="parameters" element="tns:sendSaveCMIRResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwcfB2B_sendMedia_Asset_InputMessage">
+    <wsdl:part name="parameters" element="tns:sendMedia_Asset" />
+  </wsdl:message>
+  <wsdl:message name="IwcfB2B_sendMedia_Asset_OutputMessage">
+    <wsdl:part name="parameters" element="tns:sendMedia_AssetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwcfB2B_sendPrice_Hybris_InputMessage">
+    <wsdl:part name="parameters" element="tns:sendPrice_Hybris" />
+  </wsdl:message>
+  <wsdl:message name="IwcfB2B_sendPrice_Hybris_OutputMessage">
+    <wsdl:part name="parameters" element="tns:sendPrice_HybrisResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwcfB2B_sendPriceCheckReplyPL_Hybris_InputMessage">
+    <wsdl:part name="parameters" element="tns:sendPriceCheckReplyPL_Hybris" />
+  </wsdl:message>
+  <wsdl:message name="IwcfB2B_sendPriceCheckReplyPL_Hybris_OutputMessage">
+    <wsdl:part name="parameters" element="tns:sendPriceCheckReplyPL_HybrisResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwcfB2B_sendCustomerRange_Hybris_InputMessage">
+    <wsdl:part name="parameters" element="tns:sendCustomerRange_Hybris" />
+  </wsdl:message>
+  <wsdl:message name="IwcfB2B_sendCustomerRange_Hybris_OutputMessage">
+    <wsdl:part name="parameters" element="tns:sendCustomerRange_HybrisResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwcfB2B_sendAvailability_Hybris_InputMessage">
+    <wsdl:part name="parameters" element="tns:sendAvailability_Hybris" />
+  </wsdl:message>
+  <wsdl:message name="IwcfB2B_sendAvailability_Hybris_OutputMessage">
+    <wsdl:part name="parameters" element="tns:sendAvailability_HybrisResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwcfB2B_sendAvailabilityCheckReplyPL_Hybris_InputMessage">
+    <wsdl:part name="parameters" element="tns:sendAvailabilityCheckReplyPL_Hybris" />
+  </wsdl:message>
+  <wsdl:message name="IwcfB2B_sendAvailabilityCheckReplyPL_Hybris_OutputMessage">
+    <wsdl:part name="parameters" element="tns:sendAvailabilityCheckReplyPL_HybrisResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwcfB2B_sendOrderPlacement_hybris_InputMessage">
+    <wsdl:part name="parameters" element="tns:sendOrderPlacement_hybris" />
+  </wsdl:message>
+  <wsdl:message name="IwcfB2B_sendOrderPlacement_hybris_OutputMessage">
+    <wsdl:part name="parameters" element="tns:sendOrderPlacement_hybrisResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwcfB2B_PutMessageForVmiandCmir_InputMessage">
+    <wsdl:part name="parameters" element="tns:PutMessageForVmiandCmir" />
+  </wsdl:message>
+  <wsdl:message name="IwcfB2B_PutMessageForVmiandCmir_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PutMessageForVmiandCmirResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwcfB2B_PutMessageAddress_InputMessage">
+    <wsdl:part name="parameters" element="tns:PutMessageAddress" />
+  </wsdl:message>
+  <wsdl:message name="IwcfB2B_PutMessageAddress_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PutMessageAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwcfB2B_sendOrderSearch_hybris_InputMessage">
+    <wsdl:part name="parameters" element="tns:sendOrderSearch_hybris" />
+  </wsdl:message>
+  <wsdl:message name="IwcfB2B_sendOrderSearch_hybris_OutputMessage">
+    <wsdl:part name="parameters" element="tns:sendOrderSearch_hybrisResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwcfB2B_sendOrderList_hybris_InputMessage">
+    <wsdl:part name="parameters" element="tns:sendOrderList_hybris" />
+  </wsdl:message>
+  <wsdl:message name="IwcfB2B_sendOrderList_hybris_OutputMessage">
+    <wsdl:part name="parameters" element="tns:sendOrderList_hybrisResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwcfB2B_sendGETCalendar_hybris_InputMessage">
+    <wsdl:part name="parameters" element="tns:sendGETCalendar_hybris" />
+  </wsdl:message>
+  <wsdl:message name="IwcfB2B_sendGETCalendar_hybris_OutputMessage">
+    <wsdl:part name="parameters" element="tns:sendGETCalendar_hybrisResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwcfB2B_SendConsummerAddress_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendConsummerAddress" />
+  </wsdl:message>
+  <wsdl:message name="IwcfB2B_SendConsummerAddress_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendConsummerAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwcfB2B_sendPrice_Hybris_TP2_InputMessage">
+    <wsdl:part name="parameters" element="tns:sendPrice_Hybris_TP2" />
+  </wsdl:message>
+  <wsdl:message name="IwcfB2B_sendPrice_Hybris_TP2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:sendPrice_Hybris_TP2Response" />
+  </wsdl:message>
+  <wsdl:message name="IwcfB2B_sendPlaceOrder_Asyn_InputMessage">
+    <wsdl:part name="parameters" element="tns:sendPlaceOrder_Asyn" />
+  </wsdl:message>
+  <wsdl:message name="IwcfB2B_sendPlaceOrder_Asyn_OutputMessage">
+    <wsdl:part name="parameters" element="tns:sendPlaceOrder_AsynResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwcfB2B_PutMessageRange_InputMessage">
+    <wsdl:part name="parameters" element="tns:PutMessageRange" />
+  </wsdl:message>
+  <wsdl:message name="IwcfB2B_PutMessageRange_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PutMessageRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwcfB2B_sendPlaceOrderTP2_Async_InputMessage">
+    <wsdl:part name="parameters" element="tns:sendPlaceOrderTP2_Async" />
+  </wsdl:message>
+  <wsdl:message name="IwcfB2B_sendPlaceOrderTP2_Async_OutputMessage">
+    <wsdl:part name="parameters" element="tns:sendPlaceOrderTP2_AsyncResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IwcfB2B">
+    <wsdl:operation name="sendAddress">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwcfB2B/sendAddress" message="tns:IwcfB2B_sendAddress_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwcfB2B/sendAddressResponse" message="tns:IwcfB2B_sendAddress_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="sendPrice">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwcfB2B/sendPrice" message="tns:IwcfB2B_sendPrice_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwcfB2B/sendPriceResponse" message="tns:IwcfB2B_sendPrice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="sendAvailability">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwcfB2B/sendAvailability" message="tns:IwcfB2B_sendAvailability_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwcfB2B/sendAvailabilityResponse" message="tns:IwcfB2B_sendAvailability_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="sendOrderPlacement">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwcfB2B/sendOrderPlacement" message="tns:IwcfB2B_sendOrderPlacement_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwcfB2B/sendOrderPlacementResponse" message="tns:IwcfB2B_sendOrderPlacement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="sendOrderPlacementNew">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwcfB2B/sendOrderPlacementNew" message="tns:IwcfB2B_sendOrderPlacementNew_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwcfB2B/sendOrderPlacementNewResponse" message="tns:IwcfB2B_sendOrderPlacementNew_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="sendOrderStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwcfB2B/sendOrderStatus" message="tns:IwcfB2B_sendOrderStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwcfB2B/sendOrderStatusResponse" message="tns:IwcfB2B_sendOrderStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="sendOrderStatusTest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwcfB2B/sendOrderStatusTest" message="tns:IwcfB2B_sendOrderStatusTest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwcfB2B/sendOrderStatusTestResponse" message="tns:IwcfB2B_sendOrderStatusTest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="sendCustomerRange">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwcfB2B/sendCustomerRange" message="tns:IwcfB2B_sendCustomerRange_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwcfB2B/sendCustomerRangeResponse" message="tns:IwcfB2B_sendCustomerRange_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="sendConsumerAddress">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwcfB2B/sendConsumerAddress" message="tns:IwcfB2B_sendConsumerAddress_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwcfB2B/sendConsumerAddressResponse" message="tns:IwcfB2B_sendConsumerAddress_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="sendCountryRange">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwcfB2B/sendCountryRange" message="tns:IwcfB2B_sendCountryRange_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwcfB2B/sendCountryRangeResponse" message="tns:IwcfB2B_sendCountryRange_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PutMessage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwcfB2B/PutMessage" message="tns:IwcfB2B_PutMessage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwcfB2B/PutMessageResponse" message="tns:IwcfB2B_PutMessage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="sendSaveVMIParameters">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwcfB2B/sendSaveVMIParameters" message="tns:IwcfB2B_sendSaveVMIParameters_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwcfB2B/sendSaveVMIParametersResponse" message="tns:IwcfB2B_sendSaveVMIParameters_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="sendGetVMIParameters">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwcfB2B/sendGetVMIParameters" message="tns:IwcfB2B_sendGetVMIParameters_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwcfB2B/sendGetVMIParametersResponse" message="tns:IwcfB2B_sendGetVMIParameters_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="sendSaveCMIR">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwcfB2B/sendSaveCMIR" message="tns:IwcfB2B_sendSaveCMIR_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwcfB2B/sendSaveCMIRResponse" message="tns:IwcfB2B_sendSaveCMIR_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="sendMedia_Asset">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwcfB2B/sendMedia_Asset" message="tns:IwcfB2B_sendMedia_Asset_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwcfB2B/sendMedia_AssetResponse" message="tns:IwcfB2B_sendMedia_Asset_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="sendPrice_Hybris">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwcfB2B/sendPrice_Hybris" message="tns:IwcfB2B_sendPrice_Hybris_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwcfB2B/sendPrice_HybrisResponse" message="tns:IwcfB2B_sendPrice_Hybris_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="sendPriceCheckReplyPL_Hybris">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwcfB2B/sendPriceCheckReplyPL_Hybris" message="tns:IwcfB2B_sendPriceCheckReplyPL_Hybris_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwcfB2B/sendPriceCheckReplyPL_HybrisResponse" message="tns:IwcfB2B_sendPriceCheckReplyPL_Hybris_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="sendCustomerRange_Hybris">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwcfB2B/sendCustomerRange_Hybris" message="tns:IwcfB2B_sendCustomerRange_Hybris_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwcfB2B/sendCustomerRange_HybrisResponse" message="tns:IwcfB2B_sendCustomerRange_Hybris_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="sendAvailability_Hybris">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwcfB2B/sendAvailability_Hybris" message="tns:IwcfB2B_sendAvailability_Hybris_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwcfB2B/sendAvailability_HybrisResponse" message="tns:IwcfB2B_sendAvailability_Hybris_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="sendAvailabilityCheckReplyPL_Hybris">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwcfB2B/sendAvailabilityCheckReplyPL_Hybris" message="tns:IwcfB2B_sendAvailabilityCheckReplyPL_Hybris_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwcfB2B/sendAvailabilityCheckReplyPL_HybrisResponse" message="tns:IwcfB2B_sendAvailabilityCheckReplyPL_Hybris_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="sendOrderPlacement_hybris">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwcfB2B/sendOrderPlacement_hybris" message="tns:IwcfB2B_sendOrderPlacement_hybris_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwcfB2B/sendOrderPlacement_hybrisResponse" message="tns:IwcfB2B_sendOrderPlacement_hybris_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PutMessageForVmiandCmir">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwcfB2B/PutMessageForVmiandCmir" message="tns:IwcfB2B_PutMessageForVmiandCmir_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwcfB2B/PutMessageForVmiandCmirResponse" message="tns:IwcfB2B_PutMessageForVmiandCmir_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PutMessageAddress">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwcfB2B/PutMessageAddress" message="tns:IwcfB2B_PutMessageAddress_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwcfB2B/PutMessageAddressResponse" message="tns:IwcfB2B_PutMessageAddress_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="sendOrderSearch_hybris">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwcfB2B/sendOrderSearch_hybris" message="tns:IwcfB2B_sendOrderSearch_hybris_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwcfB2B/sendOrderSearch_hybrisResponse" message="tns:IwcfB2B_sendOrderSearch_hybris_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="sendOrderList_hybris">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwcfB2B/sendOrderList_hybris" message="tns:IwcfB2B_sendOrderList_hybris_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwcfB2B/sendOrderList_hybrisResponse" message="tns:IwcfB2B_sendOrderList_hybris_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="sendGETCalendar_hybris">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwcfB2B/sendGETCalendar_hybris" message="tns:IwcfB2B_sendGETCalendar_hybris_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwcfB2B/sendGETCalendar_hybrisResponse" message="tns:IwcfB2B_sendGETCalendar_hybris_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendConsummerAddress">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwcfB2B/SendConsummerAddress" message="tns:IwcfB2B_SendConsummerAddress_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwcfB2B/SendConsummerAddressResponse" message="tns:IwcfB2B_SendConsummerAddress_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="sendPrice_Hybris_TP2">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwcfB2B/sendPrice_Hybris_TP2" message="tns:IwcfB2B_sendPrice_Hybris_TP2_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwcfB2B/sendPrice_Hybris_TP2Response" message="tns:IwcfB2B_sendPrice_Hybris_TP2_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="sendPlaceOrder_Asyn">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwcfB2B/sendPlaceOrder_Asyn" message="tns:IwcfB2B_sendPlaceOrder_Asyn_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwcfB2B/sendPlaceOrder_AsynResponse" message="tns:IwcfB2B_sendPlaceOrder_Asyn_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PutMessageRange">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwcfB2B/PutMessageRange" message="tns:IwcfB2B_PutMessageRange_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwcfB2B/PutMessageRangeResponse" message="tns:IwcfB2B_PutMessageRange_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="sendPlaceOrderTP2_Async">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwcfB2B/sendPlaceOrderTP2_Async" message="tns:IwcfB2B_sendPlaceOrderTP2_Async_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwcfB2B/sendPlaceOrderTP2_AsyncResponse" message="tns:IwcfB2B_sendPlaceOrderTP2_Async_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IwcfB2B" type="tns:IwcfB2B">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="sendAddress">
+      <soap:operation soapAction="http://tempuri.org/IwcfB2B/sendAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendPrice">
+      <soap:operation soapAction="http://tempuri.org/IwcfB2B/sendPrice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendAvailability">
+      <soap:operation soapAction="http://tempuri.org/IwcfB2B/sendAvailability" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendOrderPlacement">
+      <soap:operation soapAction="http://tempuri.org/IwcfB2B/sendOrderPlacement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendOrderPlacementNew">
+      <soap:operation soapAction="http://tempuri.org/IwcfB2B/sendOrderPlacementNew" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendOrderStatus">
+      <soap:operation soapAction="http://tempuri.org/IwcfB2B/sendOrderStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendOrderStatusTest">
+      <soap:operation soapAction="http://tempuri.org/IwcfB2B/sendOrderStatusTest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendCustomerRange">
+      <soap:operation soapAction="http://tempuri.org/IwcfB2B/sendCustomerRange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendConsumerAddress">
+      <soap:operation soapAction="http://tempuri.org/IwcfB2B/sendConsumerAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendCountryRange">
+      <soap:operation soapAction="http://tempuri.org/IwcfB2B/sendCountryRange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PutMessage">
+      <soap:operation soapAction="http://tempuri.org/IwcfB2B/PutMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendSaveVMIParameters">
+      <soap:operation soapAction="http://tempuri.org/IwcfB2B/sendSaveVMIParameters" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendGetVMIParameters">
+      <soap:operation soapAction="http://tempuri.org/IwcfB2B/sendGetVMIParameters" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendSaveCMIR">
+      <soap:operation soapAction="http://tempuri.org/IwcfB2B/sendSaveCMIR" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendMedia_Asset">
+      <soap:operation soapAction="http://tempuri.org/IwcfB2B/sendMedia_Asset" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendPrice_Hybris">
+      <soap:operation soapAction="http://tempuri.org/IwcfB2B/sendPrice_Hybris" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendPriceCheckReplyPL_Hybris">
+      <soap:operation soapAction="http://tempuri.org/IwcfB2B/sendPriceCheckReplyPL_Hybris" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendCustomerRange_Hybris">
+      <soap:operation soapAction="http://tempuri.org/IwcfB2B/sendCustomerRange_Hybris" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendAvailability_Hybris">
+      <soap:operation soapAction="http://tempuri.org/IwcfB2B/sendAvailability_Hybris" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendAvailabilityCheckReplyPL_Hybris">
+      <soap:operation soapAction="http://tempuri.org/IwcfB2B/sendAvailabilityCheckReplyPL_Hybris" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendOrderPlacement_hybris">
+      <soap:operation soapAction="http://tempuri.org/IwcfB2B/sendOrderPlacement_hybris" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PutMessageForVmiandCmir">
+      <soap:operation soapAction="http://tempuri.org/IwcfB2B/PutMessageForVmiandCmir" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PutMessageAddress">
+      <soap:operation soapAction="http://tempuri.org/IwcfB2B/PutMessageAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendOrderSearch_hybris">
+      <soap:operation soapAction="http://tempuri.org/IwcfB2B/sendOrderSearch_hybris" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendOrderList_hybris">
+      <soap:operation soapAction="http://tempuri.org/IwcfB2B/sendOrderList_hybris" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendGETCalendar_hybris">
+      <soap:operation soapAction="http://tempuri.org/IwcfB2B/sendGETCalendar_hybris" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendConsummerAddress">
+      <soap:operation soapAction="http://tempuri.org/IwcfB2B/SendConsummerAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendPrice_Hybris_TP2">
+      <soap:operation soapAction="http://tempuri.org/IwcfB2B/sendPrice_Hybris_TP2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendPlaceOrder_Asyn">
+      <soap:operation soapAction="http://tempuri.org/IwcfB2B/sendPlaceOrder_Asyn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PutMessageRange">
+      <soap:operation soapAction="http://tempuri.org/IwcfB2B/PutMessageRange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendPlaceOrderTP2_Async">
+      <soap:operation soapAction="http://tempuri.org/IwcfB2B/sendPlaceOrderTP2_Async" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="wcfB2B">
+    <wsdl:port name="BasicHttpBinding_IwcfB2B" binding="tns:BasicHttpBinding_IwcfB2B">
+      <soap:address location="http://euws1462.biz.electrolux.com:8080/UAT/WCFB2B/wcfB2B.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

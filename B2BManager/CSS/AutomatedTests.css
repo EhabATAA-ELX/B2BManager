@@ -1,0 +1,44 @@
+﻿.tableSteps td, .tableSteps th {
+    border: solid 0.5px #d5d5d5;
+    height: 28px;
+    vertical-align: middle;
+    font-family: 'Electrolux Sans';
+    padding-left: 5px;
+}
+.RadMenu .rmLeftImage {
+    height:20px;
+}
+
+.tableSteps th, .index {
+    font-weight: bold;
+    padding-left: 15px;
+}
+
+.padding-low {
+    padding-left: 3px !important;
+    padding-right: 3px !important;
+}
+
+.tableSteps tr.selected-row {
+    background-color: #e0eefb;
+}
+
+.tableSteps tr{
+    cursor:pointer;
+}
+
+    .tableSteps tr .selected-img {
+        display: none;
+    }
+
+    .tableSteps tr.selected-row .selected-img {
+        display: block !important;
+    }
+
+
+.RadTreeView_Default .rtSelected .rtIn {
+    color: #0027ff !important;
+    font-weight:bold;
+    border: none !important;
+    background: none !important;
+}

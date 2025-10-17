@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="Home.aspx" title="Home" description="Home">
+    <siteMapNode url="EbusinessTools.aspx" title="e-Business Tools"  description="e-Business Tools">
+      <siteMapNode url="EbusinessInsights.aspx" title="Insights"  description="Insights" />
+      <siteMapNode url="ExportBuilder.aspx" title="Export Builder"  description="Export Builder" />
+      <siteMapNode url="B2BPendingOrdersManager.aspx" title="Pending Orders" description="Pending Orders" />
+      <siteMapNode url="CustomersManager.aspx" title="B2B Accounts"  description="B2B Accounts" />
+      <siteMapNode url="B2BTranslations.aspx" title="B2B Translations"  description="B2B Translations" />
+      <siteMapNode url="SpecificKeysManagement.aspx" title="B2B Specifications"  description="B2B Specifications" />
+      <siteMapNode url="SAPOrderConfigurations.aspx" title="SAP Order Configurations"  description="SAP Order Configurations" />
+    </siteMapNode>
+    <siteMapNode url="Default.aspx" title="Log Viewer"  description="Log Viewer">
+      <siteMapNode url="Dashboard.aspx" title="Dashboard"  description="Dashboard" />      
+    </siteMapNode>
+    <siteMapNode url="MessageRequester.aspx" title="B2B Send Message"  description="B2B Send Message" />
+    <siteMapNode url="MonitoringManager.aspx" title="Monitoring Manager"  description="Monitoring Manager">
+      <siteMapNode url="MonitoringTool.aspx" title="Realtime Monitor"  description="Realtime Monitor" />
+      <siteMapNode url="MonitoringWorkflowManager.aspx" title="Monitoring Workflows"  description="Monitoring Workflows" />
+      <siteMapNode url="MonitoringActionsManager.aspx" title="Monitoring Workflows"  description="Monitoring Actions" />
+    </siteMapNode>
+    <siteMapNode url="CountryRangeCheck.aspx" title="Country Range Explorer" description="Country Range Explorer" />
+    <siteMapNode url="ChatBotManager.aspx" title="Chatbot Manager"  description="Chatbot Manager">
+      <siteMapNode url="ChatBotDashboard.aspx" title="Dashboard"  description="Dashboard" />
+      <siteMapNode url="ChatBotConversationsViewer.aspx" title="Conversations Viewer"  description="Conversations Viewer" />
+    <siteMapNode url="ChatBotTranslationManager.aspx" title="Translations Manager"  description="Translation Manager" />
+    </siteMapNode>
+    <siteMapNode url="B2BCacheManager.aspx" title="B2B Application Cache"  description="B2B Application Cache" />
+    <siteMapNode url="Emanager.aspx" title="E-Manager" description="E-Manager">
+      <siteMapNode url="TradeplaceCustomer.aspx" title="Tradeplace Customer" description="Tradeplace Customer">
+        <siteMapNode url="TPDefinition.aspx" title="Definition"  description="Definition" />
+        <siteMapNode url="TPGlnCode.aspx" title="Customer Code GLN" description="Customer Code GLN" />
+        <siteMapNode url="TPAdressgln.aspx" title="Address GLN"  description="Address GLN" />
+        <siteMapNode url="TPCusCode.aspx" title="CUS Code"  description="CUS Code" />
+        <siteMapNode url="TPAdressCus.aspx" title="Address CUS"  description="Address CUS" />
+        <siteMapNode url="TPSnCode.aspx" title="SN Code"  description="SN Code" />
+        <siteMapNode url="TPTroisMaster.aspx" title="TP3 Master"  description="TP3 Master" />
+      </siteMapNode>
+      <siteMapNode url="TPQueryAnalyzer.aspx" title="TP2 Query Analyzer" description="TP2 Query Analyzer"/>
+      <siteMapNode url="TPSendMessage.aspx" title="TP2 Send Message" description="TP2 Send Message"/>
+    </siteMapNode>
+    <siteMapNode url="GeneralSettings.aspx" title="General Settings"  description="General Settings">
+      <siteMapNode url="ApplicationCacheManager.aspx" title="Cache Manager"  description="Cache Manager" />
+      <siteMapNode url="UsersManagement.aspx" title="Users Manager"  description="Users Manager" />
+    </siteMapNode>
+    <siteMapNode url="AutomatedTests.aspx" title="Automated Tests"  description="Automated Tests">
+      <siteMapNode url="AutomatedTestCasesManager.aspx" title="Test Cases Manager"  description="Test Cases Manager" />
+      <siteMapNode url="AutomatedTestSuitesManager.aspx" title="Test Suites Manager"  description="Test Suites Manager" />
+    </siteMapNode>
+    <siteMapNode url="MyProfile.aspx" title="My Profile"  description="My Profile">
+    </siteMapNode>
+    <siteMapNode url="Unauthorized.aspx" title="Unauthorized" description="Unauthorized">
+    </siteMapNode>
+  </siteMapNode>
+
+</siteMap>

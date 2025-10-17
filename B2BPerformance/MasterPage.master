@@ -1,0 +1,38 @@
+﻿<%@ Master Language="VB" CodeFile="MasterPage.master.vb" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>B2B Performance Checker (POC)</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager runat="server" ID="sciptManager1"></asp:ScriptManager>
+        <div>
+            <table>
+                <tr>
+                    <td>
+                        <asp:Label runat="server" ID="lblName"></asp:Label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="MyEmptyPage.aspx" target="_self">My empty page</a> |
+                        <a href="ProductLoadTest.aspx" target="_self">Fill session comparison</a> |
+                        <a href="Default.aspx" target="_self">Page with operations sample</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</body>
+</html>

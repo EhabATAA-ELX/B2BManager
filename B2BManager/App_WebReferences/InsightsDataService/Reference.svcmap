@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="cb3b3cd8-7b79-458c-9119-4fc35c605d11" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://euws1463:8080/InsightsMasterService/InsightsDataService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="InsightsDataService.xsd" MetadataType="Schema" ID="2deaece4-b593-4470-9eff-9617fbda1aca" SourceId="1" SourceUrl="http://euws1463:8080/InsightsMasterService/InsightsDataService.svc?xsd=xsd1" />
+    <MetadataFile FileName="InsightsDataService.disco" MetadataType="Disco" ID="a557557f-1ad8-412c-bafb-e0ba7ceb3abf" SourceId="1" SourceUrl="http://euws1463:8080/InsightsMasterService/InsightsDataService.svc?disco" />
+    <MetadataFile FileName="InsightsDataService1.xsd" MetadataType="Schema" ID="0677ffe7-c755-46f5-a24e-407e0f53e09c" SourceId="1" SourceUrl="http://euws1463:8080/InsightsMasterService/InsightsDataService.svc?xsd=xsd2" />
+    <MetadataFile FileName="InsightsDataService.wsdl" MetadataType="Wsdl" ID="f76d6744-052c-4b41-8325-661fd4598ad0" SourceId="1" SourceUrl="http://euws1463:8080/InsightsMasterService/InsightsDataService.svc?wsdl" />
+    <MetadataFile FileName="InsightsDataService2.xsd" MetadataType="Schema" ID="0da0410e-cc1b-469e-aca3-be1d56ad199f" SourceId="1" SourceUrl="http://euws1463:8080/InsightsMasterService/InsightsDataService.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

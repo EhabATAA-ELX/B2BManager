@@ -1,0 +1,564 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://euws1462.biz.electrolux.com:8080/UAT/WCFB2B/wcfB2B.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:element name="sendAddress">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="message" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="BooReply" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sendAddressResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sendAddressResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sendPrice">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="message" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="BooReply" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sendPriceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sendPriceResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sendAvailability">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="message" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="BooReply" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sendAvailabilityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sendAvailabilityResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sendOrderPlacement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="message" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="BooReply" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sendOrderPlacementResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sendOrderPlacementResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sendOrderPlacementNew">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="message" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="BooReply" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sendOrderPlacementNewResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sendOrderPlacementNewResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sendOrderStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="message" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="BooReply" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sendOrderStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sendOrderStatusResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sendOrderStatusTest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="message" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="BooReply" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sendOrderStatusTestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sendOrderStatusTestResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sendCustomerRange">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="message" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="BooReply" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sendCustomerRangeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sendCustomerRangeResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sendConsumerAddress">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="message" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="BooReply" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sendConsumerAddressResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sendConsumerAddressResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sendCountryRange">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="message" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sendCountryRangeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sendCountryRangeResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PutMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strMsg" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lngTypeMsg" type="xs:long" />
+        <xs:element minOccurs="0" name="strQName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="intCharacterSet" type="xs:int" />
+        <xs:element minOccurs="0" name="booReplyReturn" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PutMessageResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PutMessageResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sendSaveVMIParameters">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="message" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="BooReply" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sendSaveVMIParametersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sendSaveVMIParametersResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sendGetVMIParameters">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="message" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="BooReply" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sendGetVMIParametersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sendGetVMIParametersResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sendSaveCMIR">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="message" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="BooReply" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sendSaveCMIRResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sendSaveCMIRResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sendMedia_Asset">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SOP" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="correlid" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="xml" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sendMedia_AssetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sendMedia_AssetResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sendPrice_Hybris">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strMsg" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strCorrId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="U_ID" type="q1:guid" />
+        <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="SESSIONID" type="q2:guid" />
+        <xs:element minOccurs="0" name="APPLICATIONEXECUTED" type="xs:int" />
+        <xs:element minOccurs="0" name="SOP_NAME" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Webservice_price" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="WebServiceUsername" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="WebServicePassword" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="requester" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sendPrice_HybrisResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sendPrice_HybrisResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sendPriceCheckReplyPL_Hybris">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PriceMessage" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="PriceCorrelId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="SOP_NAME" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Webservice_price" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="WebServiceUsername" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="WebServicePassword" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sendPriceCheckReplyPL_HybrisResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sendPriceCheckReplyPL_HybrisResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sendCustomerRange_Hybris">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strMsg" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strCorrId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="U_ID" type="q3:guid" />
+        <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="SESSIONID" type="q4:guid" />
+        <xs:element minOccurs="0" name="APPLICATIONEXECUTED" type="xs:int" />
+        <xs:element minOccurs="0" name="SOP_NAME" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Webservice_customerRange" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="WebServiceUsername" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="WebServicePassword" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sendCustomerRange_HybrisResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sendCustomerRange_HybrisResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sendAvailability_Hybris">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strMsg" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strCorrId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="U_ID" type="q5:guid" />
+        <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="SESSIONID" type="q6:guid" />
+        <xs:element minOccurs="0" name="APPLICATIONEXECUTED" type="xs:int" />
+        <xs:element minOccurs="0" name="SOP_NAME" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Webservice_avail" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="WebServiceUsername" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="WebServicePassword" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="requester" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sendAvailability_HybrisResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sendAvailability_HybrisResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sendAvailabilityCheckReplyPL_Hybris">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AvailMessage" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="AvailCorrelId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="SOP_NAME" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Webservice_avail" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="WebServiceUsername" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="WebServicePassword" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sendAvailabilityCheckReplyPL_HybrisResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sendAvailabilityCheckReplyPL_HybrisResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sendOrderPlacement_hybris">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strMessage" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strCorrelId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="SOP_NAME" nillable="true" type="xs:string" />
+        <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="U_ID" type="q7:guid" />
+        <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="SESSIONID" type="q8:guid" />
+        <xs:element minOccurs="0" name="Webservice_placeorder" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="WebServiceUsername" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="WebServicePassword" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sendOrderPlacement_hybrisResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sendOrderPlacement_hybrisResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PutMessageForVmiandCmir">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="typemessage" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strMsg" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lngTypeMsg" type="xs:long" />
+        <xs:element minOccurs="0" name="strQName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="intCharacterSet" type="xs:int" />
+        <xs:element minOccurs="0" name="booReplyReturn" type="xs:boolean" />
+        <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="U_ID" type="q9:guid" />
+        <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="SESSIONID" type="q10:guid" />
+        <xs:element minOccurs="0" name="APPLICATIONEXECUTED" type="xs:int" />
+        <xs:element minOccurs="0" name="SOP_NAME" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PutMessageForVmiandCmirResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PutMessageForVmiandCmirResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PutMessageAddress">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="typemessage" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strMsg" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lngTypeMsg" type="xs:long" />
+        <xs:element minOccurs="0" name="strQName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="intCharacterSet" type="xs:int" />
+        <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="U_ID" type="q11:guid" />
+        <xs:element xmlns:q12="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="SESSIONID" type="q12:guid" />
+        <xs:element minOccurs="0" name="APPLICATIONEXECUTED" type="xs:int" />
+        <xs:element minOccurs="0" name="SOP_NAME" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PutMessageAddressResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PutMessageAddressResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sendOrderSearch_hybris">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strMessage" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strCorrelId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="SOP_NAME" nillable="true" type="xs:string" />
+        <xs:element xmlns:q13="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="U_ID" type="q13:guid" />
+        <xs:element xmlns:q14="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="SESSIONID" type="q14:guid" />
+        <xs:element minOccurs="0" name="Webservice_orderlist" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="WebServiceUsername" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="WebServicePassword" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sendOrderSearch_hybrisResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sendOrderSearch_hybrisResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sendOrderList_hybris">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strMessage" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strCorrelId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="SOP_NAME" nillable="true" type="xs:string" />
+        <xs:element xmlns:q15="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="U_ID" type="q15:guid" />
+        <xs:element xmlns:q16="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="SESSIONID" type="q16:guid" />
+        <xs:element minOccurs="0" name="Webservice_orderlist" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="WebServiceUsername" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="WebServicePassword" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sendOrderList_hybrisResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sendOrderList_hybrisResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sendGETCalendar_hybris">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strMessage" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strCorrelId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="SOP_NAME" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="webservice_GetCalendar" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="WebServiceUsername" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="WebServicePassword" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sendGETCalendar_hybrisResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sendGETCalendar_hybrisResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendConsummerAddress">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strMessage" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strCorrelId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="SOP_NAME" nillable="true" type="xs:string" />
+        <xs:element xmlns:q17="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="U_ID" type="q17:guid" />
+        <xs:element xmlns:q18="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="SESSIONID" type="q18:guid" />
+        <xs:element minOccurs="0" name="Webservice_consummerAddress" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="WebServiceUsername" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="WebServicePassword" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendConsummerAddressResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SendConsummerAddressResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sendPrice_Hybris_TP2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strCorrId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strMsg" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Webservice_price" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="WebServiceUsername" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="WebServicePassword" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sendPrice_Hybris_TP2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sendPrice_Hybris_TP2Result" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sendPlaceOrder_Asyn">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strCorrId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strMsg" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="SOP_NAME" nillable="true" type="xs:string" />
+        <xs:element xmlns:q19="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="U_ID" type="q19:guid" />
+        <xs:element xmlns:q20="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="SESSIONID" type="q20:guid" />
+        <xs:element minOccurs="0" name="Webservice_PlaceOrder_Async" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="WebServiceUsername" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="WebServicePassword" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sendPlaceOrder_AsynResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sendPlaceOrder_AsynResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PutMessageRange">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="typemessage" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strMsg" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lngTypeMsg" type="xs:long" />
+        <xs:element minOccurs="0" name="strQName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="intCharacterSet" type="xs:int" />
+        <xs:element xmlns:q21="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="U_ID" type="q21:guid" />
+        <xs:element xmlns:q22="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="SESSIONID" type="q22:guid" />
+        <xs:element minOccurs="0" name="APPLICATIONEXECUTED" type="xs:int" />
+        <xs:element minOccurs="0" name="SOP_NAME" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PutMessageRangeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PutMessageRangeResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sendPlaceOrderTP2_Async">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strMsg" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Webservice_PlaceOrder_Async" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="WebServiceUsername" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="WebServicePassword" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sendPlaceOrderTP2_AsyncResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sendPlaceOrderTP2_AsyncResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

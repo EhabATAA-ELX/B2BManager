@@ -1,0 +1,2 @@
+﻿<%@ Control Language="VB" AutoEventWireup="false" CodeFile="InsightsPieChart.ascx.vb" Inherits="UserControls_InsightsPieChart" %>
+<div class="grid-stack-item-content" style="width: 98%; height: 500px;" id="Chart_<%= ChartUID %>"></div>

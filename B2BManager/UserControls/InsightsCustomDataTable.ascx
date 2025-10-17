@@ -1,0 +1,2 @@
+﻿<%@ Control Language="VB" AutoEventWireup="false" CodeFile="InsightsCustomDataTable.ascx.vb" Inherits="UserControls_InsightsCustomDataTable" %>
+<div class="grid-stack-item-content" style="width: 98%;height:100%;max-height:440px"  id="Chart_<%= ChartUID %>"></div>

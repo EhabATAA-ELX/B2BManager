@@ -1,0 +1,118 @@
+﻿.dashobard-title {
+    font-family: 'Electrolux Sans';
+    font-variant: small-caps;
+    font-size: 18pt;
+    width: 100%;
+    text-align: center;
+}
+
+#dashboard {
+    padding-top: 25px;
+    background: #fff !important;
+    border: 0 !important;
+}
+
+.dashobard-container {
+    padding: 25px;
+    width: 100%;
+}
+
+.dashobard-area-title {
+    font-family: 'Electrolux Sans';
+    font-variant: small-caps;
+    font-size: 15pt;
+}
+
+.dashobard-area-title-container {
+    margin-bottom: 25px;
+}
+
+.rtWrapperContent div {
+    margin: 10px;
+}
+
+.custom-chart-title, .custom-chart-subtitle {
+    font-family: Helvetica, sans-serif;
+    width: 100%;
+    text-align: center;
+}
+
+.custom-chart-subtitle {
+    font-size: 9.5pt;
+    color: #aaa;
+}
+
+.custom-chart-title {
+    font-size: 15.0pt;
+    color: #444444;
+    font-weight: bold;
+}
+
+.custom-chart-header {
+    font-size: 9.0pt;
+    font-family: Helvetica, sans-serif;
+    color: #444444;
+}
+
+.custom-chart-text {
+    font-size: 15pt !important;
+    font-family: Helvetica, sans-serif;
+    vertical-align: middle !important;
+}
+
+.custom-chart-small-text {
+    font-size: 13pt !important;
+    font-family: Helvetica, sans-serif;
+    vertical-align: middle !important;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.align-left {
+    text-align: left !important;
+}
+
+.grid-stack-item {
+    min-height: 500px !important;
+}
+
+.custom-chart-value {
+    font-size: 22.5pt;
+    font-family: Helvetica, sans-serif;
+    color: #4a90e2;
+    vertical-align: top;
+}
+
+.vertical-align-bottom {
+    vertical-align: bottom;
+}
+
+.vertical-align-top {
+    vertical-align: top;
+}
+
+.custom-chart-table {
+    width: 100%;
+}
+
+    .custom-chart-table td {
+        text-align: center;
+    }
+
+    .custom-chart-table img.flag {
+        border: 1px solid #eaeef2;
+        border-radius: 50%;
+        width: 50px;
+    }
+
+.generic-message {
+    text-align: center;
+    width: 100%;
+}
+
+    .generic-message h2 {
+        color: #BDC0C4;
+        margin-top: 150px;
+    }

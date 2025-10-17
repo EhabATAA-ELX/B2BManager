@@ -1,0 +1,32 @@
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build Folders
+bin/
+obj/
+
+# TFS old MSSCCI files
+*.vssscc
+*.vspscc
+*.vsscc
+
+# Test results
+TestResults/
+
+# Packages
+*.nupkg
+packages/
+
+# Rider
+.idea/
+
+# Others
+*.dbmdl
+*.opensdf
+*.sdf
+*.cache
+

@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetCacheKeyNames">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetCacheKeyNamesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCacheKeyNamesResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetCacheValueByKeyName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="keyName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCacheValueByKeyNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCacheValueByKeyNameResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveCacheValueByKeyName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="keyName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveCacheValueByKeyNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RemoveCacheValueByKeyNameResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ArrayOfString" nillable="true" type="tns:ArrayOfString" />
+      <s:element name="anyType" nillable="true" />
+      <s:element name="boolean" type="s:boolean" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetCacheKeyNamesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCacheKeyNames" />
+  </wsdl:message>
+  <wsdl:message name="GetCacheKeyNamesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCacheKeyNamesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCacheValueByKeyNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCacheValueByKeyName" />
+  </wsdl:message>
+  <wsdl:message name="GetCacheValueByKeyNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCacheValueByKeyNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveCacheValueByKeyNameSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveCacheValueByKeyName" />
+  </wsdl:message>
+  <wsdl:message name="RemoveCacheValueByKeyNameSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveCacheValueByKeyNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCacheKeyNamesHttpGetIn" />
+  <wsdl:message name="GetCacheKeyNamesHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetCacheValueByKeyNameHttpGetIn">
+    <wsdl:part name="keyName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCacheValueByKeyNameHttpGetOut">
+    <wsdl:part name="Body" element="tns:anyType" />
+  </wsdl:message>
+  <wsdl:message name="RemoveCacheValueByKeyNameHttpGetIn">
+    <wsdl:part name="keyName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RemoveCacheValueByKeyNameHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="GetCacheKeyNamesHttpPostIn" />
+  <wsdl:message name="GetCacheKeyNamesHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetCacheValueByKeyNameHttpPostIn">
+    <wsdl:part name="keyName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCacheValueByKeyNameHttpPostOut">
+    <wsdl:part name="Body" element="tns:anyType" />
+  </wsdl:message>
+  <wsdl:message name="RemoveCacheValueByKeyNameHttpPostIn">
+    <wsdl:part name="keyName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RemoveCacheValueByKeyNameHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:portType name="WebCacheManagerSoap">
+    <wsdl:operation name="GetCacheKeyNames">
+      <wsdl:input message="tns:GetCacheKeyNamesSoapIn" />
+      <wsdl:output message="tns:GetCacheKeyNamesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCacheValueByKeyName">
+      <wsdl:input message="tns:GetCacheValueByKeyNameSoapIn" />
+      <wsdl:output message="tns:GetCacheValueByKeyNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveCacheValueByKeyName">
+      <wsdl:input message="tns:RemoveCacheValueByKeyNameSoapIn" />
+      <wsdl:output message="tns:RemoveCacheValueByKeyNameSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="WebCacheManagerHttpGet">
+    <wsdl:operation name="GetCacheKeyNames">
+      <wsdl:input message="tns:GetCacheKeyNamesHttpGetIn" />
+      <wsdl:output message="tns:GetCacheKeyNamesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCacheValueByKeyName">
+      <wsdl:input message="tns:GetCacheValueByKeyNameHttpGetIn" />
+      <wsdl:output message="tns:GetCacheValueByKeyNameHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveCacheValueByKeyName">
+      <wsdl:input message="tns:RemoveCacheValueByKeyNameHttpGetIn" />
+      <wsdl:output message="tns:RemoveCacheValueByKeyNameHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="WebCacheManagerHttpPost">
+    <wsdl:operation name="GetCacheKeyNames">
+      <wsdl:input message="tns:GetCacheKeyNamesHttpPostIn" />
+      <wsdl:output message="tns:GetCacheKeyNamesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCacheValueByKeyName">
+      <wsdl:input message="tns:GetCacheValueByKeyNameHttpPostIn" />
+      <wsdl:output message="tns:GetCacheValueByKeyNameHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveCacheValueByKeyName">
+      <wsdl:input message="tns:RemoveCacheValueByKeyNameHttpPostIn" />
+      <wsdl:output message="tns:RemoveCacheValueByKeyNameHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebCacheManagerSoap" type="tns:WebCacheManagerSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetCacheKeyNames">
+      <soap:operation soapAction="http://tempuri.org/GetCacheKeyNames" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCacheValueByKeyName">
+      <soap:operation soapAction="http://tempuri.org/GetCacheValueByKeyName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveCacheValueByKeyName">
+      <soap:operation soapAction="http://tempuri.org/RemoveCacheValueByKeyName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebCacheManagerSoap12" type="tns:WebCacheManagerSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetCacheKeyNames">
+      <soap12:operation soapAction="http://tempuri.org/GetCacheKeyNames" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCacheValueByKeyName">
+      <soap12:operation soapAction="http://tempuri.org/GetCacheValueByKeyName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveCacheValueByKeyName">
+      <soap12:operation soapAction="http://tempuri.org/RemoveCacheValueByKeyName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebCacheManagerHttpGet" type="tns:WebCacheManagerHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GetCacheKeyNames">
+      <http:operation location="/GetCacheKeyNames" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCacheValueByKeyName">
+      <http:operation location="/GetCacheValueByKeyName" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveCacheValueByKeyName">
+      <http:operation location="/RemoveCacheValueByKeyName" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebCacheManagerHttpPost" type="tns:WebCacheManagerHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GetCacheKeyNames">
+      <http:operation location="/GetCacheKeyNames" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCacheValueByKeyName">
+      <http:operation location="/GetCacheValueByKeyName" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveCacheValueByKeyName">
+      <http:operation location="/RemoveCacheValueByKeyName" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebCacheManager">
+    <wsdl:port name="WebCacheManagerSoap" binding="tns:WebCacheManagerSoap">
+      <soap:address location="http://localhost:65003/WebCacheManager.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebCacheManagerSoap12" binding="tns:WebCacheManagerSoap12">
+      <soap12:address location="http://localhost:65003/WebCacheManager.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebCacheManagerHttpGet" binding="tns:WebCacheManagerHttpGet">
+      <http:address location="http://localhost:65003/WebCacheManager.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebCacheManagerHttpPost" binding="tns:WebCacheManagerHttpPost">
+      <http:address location="http://localhost:65003/WebCacheManager.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

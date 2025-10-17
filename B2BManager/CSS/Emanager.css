@@ -1,0 +1,75 @@
+﻿.SelectedListItem {
+    font-weight: bold;
+}
+
+.TPAlternatingItemStyle {
+    background-color: #f2f2f2;
+    width: 370px;
+}
+
+.TPItemStyle{
+    width:370px;
+}
+
+.TPItemStyle:hover, 
+.TPAlternatingItemStyle:hover {
+    font-weight: bold;
+}
+
+.AlternatingItemStyle {
+    background-color: #f2f2f2;
+}
+
+.ItemStyle {
+}
+
+.ItemStyle:hover,
+.AlternatingItemStyle:hover {
+    font-weight: bold;
+}
+
+.DefinitionPanel, .EANPanel {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.TradePlaceCustomerPanel {
+    display: inline-block;
+    width:370px;
+    height:500px;
+    position:relative;
+}
+
+.RadInput {
+    display:inline-block !important;
+}
+
+.PanelDetailCustomer{
+    width:240px;
+}
+
+.fieldsetEnvironment {
+    display: inline-block;
+    width: 300px;
+    vertical-align: top;
+    height: 90px;
+}
+
+.aspNetDisabled{
+    pointer-events:none;
+}
+
+.amsify-suggestags-area{
+    width:350px;
+}
+
+.AddButtonTPDefinition {
+    border: none;
+    width: 25px;
+    height: 25px;
+    background: url("/Images/EManager/But_ArrowRight.gif");
+}
+
+.rgMasterTable{
+    border-collapse:collapse !important;
+}

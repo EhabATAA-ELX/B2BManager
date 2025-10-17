@@ -1,0 +1,54 @@
+﻿.dataTables_filter {
+    float: left !important;
+    margin-left: 5px;
+    margin-bottom: 10px;
+}
+
+table.dataTable tbody tr td {
+    min-width: 65px;
+}
+
+#gridViewContainertab_0_filter {
+    text-align: left;
+    font-family: Electrolux_light;
+    font-weight: bold;
+    color: #041d4f;
+}
+
+    #gridViewContainertab_0_filter input {
+        margin-left: 69px;
+        width: 180px;
+        border: solid 1px #767676;
+    }
+
+.userTypeImgLabel {
+    margin-left: 5px;
+    font-size: 8pt;
+    vertical-align: top;
+    line-height: 24px;
+}
+
+table.dataTable.cell-border tbody tr:first-child td > span {
+    text-align: center;
+}
+
+.dataTable {
+    width: 100% !important;
+}
+
+.compactModeContainer {
+    width: 50%;
+}
+
+.minWidth830px {
+    min-width: 830px;
+}
+
+.load {
+    background-image: url("../Images/Loading.gif");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 24px;
+    cursor: not-allowed;
+}
