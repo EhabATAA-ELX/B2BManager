@@ -1,5 +1,6 @@
 ﻿<%@ Control Language="VB" AutoEventWireup="false" CodeFile="FilesManagerManageSecurity.ascx.vb" Inherits="UserControls_FilesManagerManageSecurity" %>
 <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
+<%@ Register Src="~/UserControls/ConditionGrid.ascx" TagPrefix="uc" TagName="ConditionGrid" %>
 
 <asp:UpdatePanel runat="server" ID="ManageSecurityUpdatePanel">
     <ContentTemplate>
@@ -72,7 +73,7 @@
                     <tr>
                         <td>
                             <span>
-                                <asp:Label runat="server" Text="Number of assigned customers : " /><asp:Label ID="AssignedCustomersNumberLb" runat="server" />
+                                <asp:Label Text="Number of assigned customers : " runat="server" /><asp:Label ID="AssignedCustomersNumberLb" runat="server" />
                                 <asp:Button ID="btnPreviewCustomers" OnClientClick="callParentPreview(); return false;" runat="server" class="btn bleu rounded" Text="Preview Matching Customers" />
 
                             </span>
@@ -86,35 +87,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <telerik:RadGrid ID="ConditionRg" runat="server" OnNeedDataSource="ConditionRg_NeedDataSource" OnItemDataBound="ConditionRg_ItemDataBound" RenderMode="Lightweight" AllowPaging="True" AllowSorting="true" AutoGenerateColumns="False" Width="100%">
-                                <PagerStyle Mode="NextPrevAndNumeric" />
-                                <MasterTableView Width="95%" DataKeyNames="ConditionID, ConditionIsStatic,SOPName">
-                                    <Columns>
-                                        <telerik:GridTemplateColumn AllowFiltering="false" ItemStyle-HorizontalAlign="Center" HeaderStyle-Width="10%">
-                                            <ItemTemplate>
-                                                <asp:LinkButton runat="server" ID="EditConditionBtn">
-                                                    <img src="Images/edit.png" alt="Edit" width="20" height="20">
-                                                </asp:LinkButton>
-                                                <asp:LinkButton runat="server" ID="DeleteConditionBtn">
-                                                    <img src="Images/Delete.png" alt="Delete" onclick="DeleteConditionFocusRange('<%# Eval("ConditionID").ToString() %>'); return false;" width="20" height="20">
-                                                </asp:LinkButton>
-                                            </ItemTemplate>
-                                        </telerik:GridTemplateColumn>
-                                        <telerik:GridBoundColumn DataField="ConditionName" Display="false" SortExpression="ConditionName" HeaderText="Name" HeaderStyle-Width="35%" />
-
-                                        <telerik:GridCheckBoxColumn DataField="ConditionIsStatic" Display="false" HeaderText="Static Condition" UniqueName="Static" SortExpression="ConditionIsStatic"
-                                            ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="10%" />
-                                        <telerik:GridBoundColumn DataField="ConditionMatchingNumber" SortExpression="ConditionMatchingNumber" HeaderText="Matching Customers"
-                                            ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="20%" />
-                                        <telerik:GridBoundColumn DataField="CriteriaCount" SortExpression="CriteriaCount" HeaderText="Criteria Count"
-                                            ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="10%" />
-                                        <telerik:GridBoundColumn DataField="SOPName" Display="false" />
-                                        <telerik:GridBoundColumn DataField="ConditionUpdateDate" HeaderStyle-HorizontalAlign="Center" DataFormatString="{0:dd/MM/yyyy}" SortExpression="ConditionUpdateDate" HeaderText="Last update" HeaderStyle-Width="15%" />
-                                        <telerik:GridBoundColumn DataField="ConditionUpdatedBy" HeaderStyle-HorizontalAlign="Center" SortExpression="ConditionUpdatedBy" HeaderText="Updated by" HeaderStyle-Width="15%" />
-
-                                    </Columns>
-                                </MasterTableView>
-                            </telerik:RadGrid>
+                            <uc:ConditionGrid ID="ConditionGrid" runat="server" PageSource="FilesManager" DocumentGuidString='<%# DocumentGuidLabel.Text %>' />
                         </td>
                     </tr>
                     <tr>
@@ -146,6 +119,8 @@
                         <td>
                             <asp:CheckBox runat="server" ID="SetThumbnailDefault" Text=" Use default Thumbnail" />
                         </td>
+                    </tr>
+                    <tr>
                         <td>
                             <asp:Image runat="server" ID="ImageThumbnail" />
                             <asp:Label runat="server" ID="ThumbnailGuidLabel" Style="display: none" />
@@ -225,7 +200,8 @@
     }
 
     function refreshGrid() {
-        var grid = $find("<%= ConditionRg.ClientID %>");
+        var gridClientId = window['ConditionGrid1_RgClientID'];
+        var grid = gridClientId ? $find(gridClientId) : null;
         if (grid) {
             grid.get_masterTableView().rebind();
         }

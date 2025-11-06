@@ -161,15 +161,21 @@ Partial Class UserControls_FilesManagerManageSecurity
                 Dim urlBase = String.Format("{0}://{1}", Request.Url.Scheme, Request.Url.Authority)
                 Dim newConditionTokenData As New TokenData(EnvironmentID, SopId, False, "creation", "FilesManager", documentIdsString, "", Nothing)
                 Dim token = ClsTokenHelper.GenerateToken(newConditionTokenData)
-                AddConditionBtn.OnClientClick = "window.parent.openInDirectAssignmentPopup('" & urlBase & ResolveUrl("~/InDirectAssignment.aspx") &
-                                "?QueryBuilderToken=" & token & "'); return false;"
+                AddConditionBtn.OnClientClick = "window.parent.openInDirectAssignmentPopup('" & urlBase & ResolveUrl("~/InDirectAssignment.aspx") & "?QueryBuilderToken=" & token & "'); return false;"
 
                 Dim newStaticConditionTokenData As New TokenData(EnvironmentID, SopId, True, "creation", "FilesManager", documentIdsString, "", Nothing)
                 Dim staticToken = ClsTokenHelper.GenerateToken(newStaticConditionTokenData)
 
                 AddStaticConditionBtn.OnClientClick = "window.parent.openStaticAssignmentPopup('" & urlBase & ResolveUrl("~/QueryBuilderStaticAssignment.aspx") & "?QueryBuilderToken=" & staticToken & "'); return false;"
 
-                ConditionRg.Rebind()
+                ' Rebind the new ConditionGrid control if present
+                Dim ctl = TryCast(Me.FindControl("ConditionGrid1"), UserControl)
+                If ctl IsNot Nothing Then
+                    Dim method = ctl.GetType().GetMethod("RebindConditions")
+                    If method IsNot Nothing Then
+                        method.Invoke(ctl, Nothing)
+                    End If
+                End If
             ElseIf FileSelect.Length = 1 AndAlso FileSelect.First.ThumbnailID = New Guid Then
                 ImageThumbnail.ImageUrl = String.Empty
             ElseIf FileSelect.Length = 1 Then
@@ -485,97 +491,11 @@ Partial Class UserControls_FilesManagerManageSecurity
     End Function
 
     Protected Sub ConditionRg_ItemDataBound(sender As Object, e As GridItemEventArgs)
-        Dim item = TryCast(e.Item, GridDataItem)
-        If item Is Nothing Then Return
-
-        Dim conditionName As String = DataBinder.Eval(item.DataItem, "ConditionName").ToString()
-        item.ToolTip = conditionName
-
-        Dim urlBase = String.Format("{0}://{1}", Request.Url.Scheme, Request.Url.Authority)
-        Dim sopName As String = If(item.GetDataKeyValue("SOPName") IsNot Nothing,
-                         item.GetDataKeyValue("SOPName").ToString(),
-                         String.Empty)
-
-        Dim conditionIdValue As Object = item.GetDataKeyValue("ConditionID")
-        Dim conditionId As Guid = If(conditionIdValue IsNot Nothing AndAlso Not DBNull.Value.Equals(conditionIdValue),
-                           CType(conditionIdValue, Guid),
-                           Guid.Empty)
-
-        Dim isStatic As Boolean = CType(item.GetDataKeyValue("ConditionIsStatic"), Boolean)
-
-        If isStatic Then
-            ' Apply a light background color for visual distinction
-            item.Style("background-color") = "#F0F8FF"
-            item.Style("font-weight") = "bold"
-        End If
-
-        Dim documenIds As String
-        If DocumentIDs Is Nothing Then
-            documenIds = DocumentGuidLabel.Text
-        Else
-            documenIds = DocumentIDs.ToString
-        End If
-        Dim editConditionTokenData As New TokenData(Request.QueryString("envid"), sopName, isStatic, "edit", "FilesManager", documenIds, "", conditionId)
-        Dim token = ClsTokenHelper.GenerateToken(editConditionTokenData)
-
-        Dim editConditionBtn = CType(item.FindControl("EditConditionBtn"), LinkButton)
-        If isStatic Then
-            editConditionBtn.OnClientClick = "window.parent.openStaticAssignmentPopup('" & urlBase & ResolveUrl("~/QueryBuilderStaticAssignment.aspx") & "?QueryBuilderToken=" & token & "'); return false;"
-            item("CriteriaCount").Text = "Manual assignment"
-        Else
-            editConditionBtn.OnClientClick = "window.parent.openInDirectAssignmentPopup('" & urlBase & ResolveUrl("~/InDirectAssignment.aspx") &
-                                "?QueryBuilderToken=" & token & "'); return false;"
-        End If
+        ' Handled by ConditionGrid user control now.
     End Sub
 
     Protected Sub ConditionRg_NeedDataSource(source As Object, e As GridNeedDataSourceEventArgs)
-        ' 1. Create a list to hold only the valid GUIDs.
-        Dim validGuidList As New List(Of Guid)()
-
-        ' 2. Split the string, automatically removing any empty entries.
-        Dim rawIds As String() = Me.DocumentGuidLabel.Text.Split(
-            New Char() {";"c},
-            StringSplitOptions.RemoveEmptyEntries
-        )
-
-        ' 3. Loop through the potential IDs and safely parse them.
-        For Each idString As String In rawIds
-            Dim parsedGuid As Guid
-            ' Trim whitespace and try to parse. 
-            ' If it's a valid GUID, add it to our list.
-            If Guid.TryParse(idString.Trim(), parsedGuid) Then
-                validGuidList.Add(parsedGuid)
-            End If
-        Next
-
-        ' 4. Convert your safe list to an array.
-        Dim idsToSearch As Guid() = validGuidList.ToArray()
-
-        Dim result As ClsDocument = DynamicConditionsHelper.GetConditionsForDocuments(idsToSearch)
-        ConditionRg.DataSource = result.Conditions
-
-        If result.StaticConditionExists Then
-            AddStaticConditionBtn.Enabled = False
-        Else
-            AddStaticConditionBtn.Enabled = True
-        End If
-
-        If result IsNot Nothing AndAlso result.Conditions IsNot Nothing AndAlso result.Conditions.Rows.Count > 0 Then
-
-            Dim conditionIds As New List(Of Guid)()
-            For Each row As DataRow In result.Conditions.Rows
-                conditionIds.Add(CType(row("ConditionID"), Guid))
-            Next
-
-            Dim sopName As String = result.Conditions.Rows(0)("SOPName").ToString()
-
-            Dim uniqueCustomers As List(Of ClsCustomer) = DynamicConditionsHelper.GetUniqueCustomersForConditions(conditionIds, sopName)
-
-            AssignedCustomersNumberLb.Text = uniqueCustomers.Count.ToString()
-        Else
-            AssignedCustomersNumberLb.Text = "0"
-        End If
-
+        ' Handled by ConditionGrid user control now.
     End Sub
 
 
